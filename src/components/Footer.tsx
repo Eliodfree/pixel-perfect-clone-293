@@ -2,13 +2,13 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="box-border w-full h-[339px] relative bg-[#141100] mt-[100px] m-0 p-0 max-sm:h-auto max-sm:px-0 max-sm:py-10">
+    <footer className="box-border w-full h-[200px] relative bg-[#141100] mt-[100px] m-0 p-0 max-sm:h-auto max-sm:px-0 max-sm:py-10 bg-green-800">
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/f45237c200a6bc62b38bff9883fcec4d466fe2a0?width=3024"
         alt=""
-        className="box-border w-full h-[345px] absolute mix-blend-overlay m-0 p-0 left-0 top-0"
+        className="box-border w-full h-[200px] absolute mix-blend-overlay m-0 p-0 left-0 top-0"
       />
-      <div className="box-border flex w-full max-w-[1165px] flex-col items-start gap-[51px] absolute -translate-x-2/4 z-[2] m-0 p-0 left-2/4 top-[53px] max-sm:gap-[30px] max-sm:px-5 max-sm:py-0">
+      <div className="box-border flex w-full max-w-[1165px] flex-col items-start gap-[30px] absolute -translate-x-2/4 z-[2] m-0 p-0 left-2/4 top-[30px] max-sm:gap-[20px] max-sm:px-5 max-sm:py-0">
         <div className="box-border flex w-full items-center gap-[329px] m-0 p-0 max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/273d52adef34c77394969b64d0690a53a9b6a793?width=1120"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
             </nav>
           </div>
         </div>
-        <div className="box-border flex justify-between items-center w-full m-0 px-0 py-5 border-t-[#FEF3C0] border-t border-solid max-md:flex-col max-md:gap-5">
+        <div className="box-border flex justify-between items-center w-full m-0 px-8 py-3 border-t-[#FEF3C0] border-t border-solid max-md:flex-col max-md:gap-5">
           <nav className="box-border flex items-center gap-6 m-0 p-0 max-md:flex-col max-md:gap-[15px]">
             <a href="#terms" className="box-border text-[#FFF7D5] text-base font-medium leading-5 cursor-pointer m-0 p-0 max-sm:text-sm hover:opacity-80 transition-opacity">
               Terms of use

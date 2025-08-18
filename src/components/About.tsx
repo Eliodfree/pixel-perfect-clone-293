@@ -16,17 +16,14 @@ const About: React.FC = () => {
           connection, and boundless reach into the blockchain ecosystem.
         </p>
       </div>
-  <div className="box-border flex w-full items-stretch gap-3 m-0 p-0 flex-row flex-nowrap justify-between">
-  <article className="box-border flex flex-col items-start gap-8 flex-[0_1_22%] border bg-[#FFF7D5] m-0 p-5 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-md:p-4 max-sm:p-2">
+  <div className="box-border flex w-full items-stretch gap-6 m-0 p-0 flex-row flex-nowrap justify-between">
+        <article className="box-border flex flex-col items-start gap-12 flex-1 border bg-[#FFF7D5] m-0 p-9 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-md:p-6 max-sm:p-5">
           <div className="box-border flex flex-col items-start gap-6 m-0 p-0">
-            <div className="flex items-center gap-2">
-              <img src="/starterr.png" alt="starter" className="w-6 h-6" />
-              <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
+            <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
               City Tour to Jinja,
               <br className="box-border m-0 p-0" />
               Exclusive
-              </h3>
-            </div>
+            </h3>
             <time className="box-border text-[#141100] text-base font-medium leading-5 m-0 p-0 max-sm:text-sm">
               Oct. 16, 2025
             </time>
@@ -34,12 +31,9 @@ const About: React.FC = () => {
         </article>
         <article className="box-border flex flex-col items-start gap-12 flex-1 border bg-[#FFF7D5] m-0 p-9 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-md:p-6 max-sm:p-5">
           <div className="box-border flex flex-col items-start gap-6 m-0 p-0">
-            <div className="flex items-center gap-2">
-              <img src="/starterr.png" alt="starter" className="w-6 h-6" />
-              <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
+            <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
               Hackathon Final Day Submission
-              </h3>
-            </div>
+            </h3>
             <time className="box-border text-[#141100] text-base font-medium leading-5 m-0 p-0 max-sm:text-sm">
               Oct. 17, 2025
             </time>
@@ -47,14 +41,11 @@ const About: React.FC = () => {
         </article>
         <article className="box-border flex flex-col items-start gap-12 flex-1 border bg-[#FFF7D5] m-0 p-9 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-md:p-6 max-sm:p-5">
           <div className="box-border flex flex-col items-start gap-6 m-0 p-0">
-            <div className="flex items-center gap-2">
-              <img src="/starterr.png" alt="starter" className="w-6 h-6" />
-              <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
+            <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
               Event
               <br className="box-border m-0 p-0" />
               Conference
-              </h3>
-            </div>
+            </h3>
             <time className="box-border text-[#141100] text-base font-medium leading-5 m-0 p-0 max-sm:text-sm">
               Oct. 19, 2025
             </time>
@@ -62,14 +53,11 @@ const About: React.FC = () => {
         </article>
         <article className="box-border flex flex-col items-start gap-12 flex-1 border bg-[#FFF7D5] m-0 p-9 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-md:p-6 max-sm:p-5">
           <div className="box-border flex flex-col items-start gap-6 m-0 p-0">
-            <div className="flex items-center gap-2">
-              <img src="/starterr.png" alt="starter" className="w-6 h-6" />
-              <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
+            <h3 className="box-border w-[216px] h-[58px] text-[#141100] text-[23px] font-bold leading-[28.75px] m-0 p-0 max-md:w-auto max-md:h-auto max-md:text-xl max-sm:text-lg">
               Ndere Cultural
               <br className="box-border m-0 p-0" />
               Centre, Kampala
-              </h3>
-            </div>
+            </h3>
             <div className="box-border text-[#141100] text-base font-medium leading-5 m-0 p-0 max-sm:text-sm">
               Venue
             </div>

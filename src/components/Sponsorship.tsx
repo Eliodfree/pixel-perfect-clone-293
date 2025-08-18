@@ -13,8 +13,8 @@ const Sponsorship: React.FC = () => {
   };
 
   return (
-    <section className="box-border flex w-full flex-col items-start gap-11 border bg-[#FFF5CA] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
-      <article className="box-border flex flex-col items-start gap-20 w-full border bg-[#FFD82A] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
+  <section className="box-border flex w-full flex-col items-start gap-11 border bg-[#FFF5CA] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
+  <article className="box-border flex flex-col items-start gap-20 w-full border bg-[#FFD82A] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundBlendMode: 'multiply'}}>
         <h2 className="box-border text-[51px] font-semibold leading-[51px] tracking-[0.51px] bg-clip-text m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
           Sponsorship Opportunity
         </h2>
@@ -24,7 +24,7 @@ const Sponsorship: React.FC = () => {
           gain media exposure, and position your company as a leader in
           Africa's digital future.
         </p>
-        <button className="box-border flex justify-center items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors">
+  <button className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors self-start">
           Explore
           <div>
             <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '18px', height: '18px'}}>

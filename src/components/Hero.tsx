@@ -3,11 +3,11 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <header className="box-border w-full h-[1013px] relative overflow-hidden m-0 p-0 max-md:h-[800px] max-sm:h-[600px]">
-      <img
+      {/* <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/88ce6c526a1118a50b5f3e9fa0c783d809bf264d?width=4404"
         alt=""
         className="box-border w-[2202px] h-[1239px] absolute left-[-356px] top-[-226px] object-cover m-0 p-0 max-md:w-[1800px] max-md:h-[1000px] max-md:left-[-200px] max-md:top-[-150px] max-sm:w-[1200px] max-sm:h-[800px] max-sm:left-[-100px] max-sm:top-[-100px]"
-      />
+      /> */}
       
       <nav className="box-border absolute z-10 m-0 p-0 top-9 inset-x-[90px] max-md:inset-x-5 max-sm:inset-x-2.5">
         <div className="box-border flex w-full h-[77px] justify-between items-center backdrop-blur-[5px] bg-[rgba(255,247,213,0.50)] m-0 px-[30px] py-3 rounded-[500px] border-2 border-solid border-[#FEEC96] max-md:h-auto max-md:px-5 max-md:py-2 max-sm:flex-col max-sm:gap-2.5 max-sm:h-auto max-sm:px-[15px] max-sm:py-1.5">
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
         </div>
       </nav>
 
-      <div className="box-border absolute -translate-x-2/4 flex flex-col items-center gap-10 m-0 p-0 left-2/4 top-[188px] max-md:gap-[30px] max-md:top-[150px] max-sm:gap-5 max-sm:top-[120px]">
+      {/* <div className="box-border absolute -translate-x-2/4 flex flex-col items-center gap-10 m-0 p-0 left-2/4 top-[188px] max-md:gap-[30px] max-md:top-[150px] max-sm:gap-5 max-sm:top-[120px]">
         <div>
           <svg width="153" height="269" viewBox="0 0 153 269" fill="none" xmlns="http://www.w3.org/2000/svg" className="ethereum-logo" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '152px', height: '268px'}}>
             <path d="M75.2864 1.25142V114.294L75.2285 114.236L4.08057 152.276L75.2864 1.25142Z" fill="#FFD30F" stroke="#231F20" strokeWidth="0.25" strokeMiterlimit="10"></path>
@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
             KAMPALA, UGANDA
           </div>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };

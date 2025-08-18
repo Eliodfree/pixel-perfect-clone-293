@@ -18,9 +18,7 @@ const Index: React.FC = () => {
         <Conference />
         <Hackathon />
         <CityTour />
-      </main>
-      <Speaking />
-      <main className="box-border w-full max-w-[1215px] flex flex-col gap-20 mx-auto my-0 px-5 py-0">
+        <Speaking />
         <Sponsorship />
       </main>
       

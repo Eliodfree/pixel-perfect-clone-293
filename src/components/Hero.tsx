@@ -93,7 +93,7 @@ const Hero = () => {
         
 
         {/* Bottom Section - Event Info Badges */}
-        <div className="relative mb-[-27px] w-full max-w-[1054px] ml-6 mt-[200px] max-md:max-w-full max-md:mb-2.5 max-md:mt-[180px]">
+        <div className="relative mb-[-27px] w-full max-w-[1054px] ml-6 mt-[250px] max-md:max-w-full max-md:mb-2.5 max-md:mt-[180px]">
           <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
             <div className="w-[77%] max-md:w-full max-md:ml-0">
               <div className="relative flex w-full flex-col items-stretch max-md:max-w-full">

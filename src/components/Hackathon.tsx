@@ -2,10 +2,10 @@ import React from 'react';
 
 const Hackathon: React.FC = () => {
   return (
-    <section className="box-border flex flex-col items-start gap-20 w-full border bg-[#FFF7D5] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
-      <div className="box-border flex flex-col items-start gap-10 w-full m-0 p-0">
+    <section className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFF7D5] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
+      <div className="box-border flex flex-col items-start gap-6 w-full m-0 p-0">
         <div className="box-border flex flex-col items-start gap-5 w-full m-0 p-0">
-          <h2 className="box-border text-[51px] font-normal leading-[51px] tracking-[0.51px] bg-clip-text m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+          <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
             Hackthon, Oct. 17th
           </h2>
           <div className="box-border flex items-center gap-3 flex-wrap m-0 p-0 max-md:flex-col max-md:items-start">

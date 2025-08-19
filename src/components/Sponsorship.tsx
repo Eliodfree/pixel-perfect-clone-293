@@ -2,20 +2,58 @@ import React, { useState } from 'react';
 
 const Sponsorship: React.FC = () => {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState<'success' | 'error' | ''>('');
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    
+    if (!email.trim()) {
+      setMessage('Please enter your email address');
+      setMessageType('error');
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setMessage('Please enter a valid email address');
+      setMessageType('error');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       console.log('Subscribing email:', email);
       setEmail('');
-      alert('Thank you for subscribing!');
+      setMessage('Thank you for subscribing! We\'ll keep you updated.');
+      setMessageType('success');
+    } catch (error) {
+      setMessage('Something went wrong. Please try again.');
+      setMessageType('error');
+    } finally {
+      setIsSubmitting(false);
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        setMessage('');
+        setMessageType('');
+      }, 5000);
     }
   };
 
   return (
-  <section className="box-border flex w-full flex-col items-start gap-11 border bg-[#FFF5CA] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
-  <article className="box-border flex flex-col items-start gap-20 w-full border bg-[#FFD82A] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundBlendMode: 'multiply'}}>
-        <h2 className="box-border text-[51px] font-semibold leading-[51px] tracking-[0.51px] bg-clip-text m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+  <section className="box-border flex w-full flex-col items-start gap-8 border bg-[#FFF5CA] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
+  <article className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFD82A] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundBlendMode: 'multiply'}}>
+        <h2 className="box-border text-[40px] font-semibold leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Sponsorship Opportunity
         </h2>
         <p className="box-border text-[#141100] text-xl font-normal leading-[25px] m-0 p-0 max-sm:text-base">
@@ -34,8 +72,8 @@ const Sponsorship: React.FC = () => {
         </button>
       </article>
       
-      <article className="box-border flex flex-col items-start gap-20 w-full border bg-[#FFFDF4] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
-        <h2 className="box-border text-[51px] font-semibold leading-[51px] tracking-[0.51px] bg-clip-text m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+      <article className="box-border flex flex-col items-start gap-6 w-full border bg-[#FFFDF4] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
+        <h2 className="box-border text-[40px] font-semibold leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Stay in the Loop
         </h2>
         <p className="box-border text-black text-xl font-normal leading-[30px] m-0 p-0 max-sm:text-base">
@@ -43,26 +81,46 @@ const Sponsorship: React.FC = () => {
           reveals, ticket sales, and special offers.. Subscribe now and get
           updates delivered straight to your inbox.
         </p>
-        <form onSubmit={handleSubscribe} className="box-border flex justify-between items-center w-full border bg-[#FFF6CC] m-0 pl-[30px] pr-[15px] py-[15px] rounded-[500px] border-solid border-[#483B00] max-md:flex-col max-md:gap-[15px] max-md:p-5">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email address"
-            className="box-border text-[rgba(20,17,0,0.50)] text-lg font-medium leading-[18px] bg-transparent border-none outline-none flex-1 m-0 p-0 max-sm:text-base placeholder:text-[rgba(20,17,0,0.50)]"
-            required
-          />
-          <button
-            type="submit"
-            className="box-border gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFD51A] m-0 px-[50px] py-5 rounded-[500px] border-solid border-[#483B00] max-md:w-full max-sm:text-base max-sm:px-[30px] max-sm:py-[15px] hover:bg-[#FFD000] transition-colors"
-          >
-            Subscribe
-          </button>
-        </form>
+        <div className="box-border flex flex-col items-start gap-4 w-full m-0 p-0">
+          <form onSubmit={handleSubscribe} className="box-border flex justify-between items-center w-full border bg-[#FFF6CC] m-0 pl-[30px] pr-[15px] py-[15px] rounded-[500px] border-solid border-[#483B00] max-md:flex-col max-md:gap-[15px] max-md:p-5 transition-all duration-200 hover:shadow-md focus-within:shadow-lg focus-within:border-[#7C6600]">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (message && messageType === 'error') {
+                  setMessage('');
+                  setMessageType('');
+                }
+              }}
+              placeholder="Enter your email address"
+              className="box-border text-[#141100] text-lg font-medium leading-[18px] bg-transparent border-none outline-none flex-1 m-0 p-0 max-sm:text-base placeholder:text-[rgba(20,17,0,0.60)] focus:placeholder:text-[rgba(20,17,0,0.40)]"
+              required
+              disabled={isSubmitting}
+            />
+            <button
+              type="submit"
+              disabled={isSubmitting || !email.trim()}
+              className="box-border gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFD51A] m-0 px-[50px] py-5 rounded-[500px] border-solid border-[#483B00] max-md:w-full max-sm:text-base max-sm:px-[30px] max-sm:py-[15px] hover:bg-[#FFD000] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#FFD51A]"
+            >
+              {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+            </button>
+          </form>
+          
+          {message && (
+            <div className={`box-border text-sm font-medium leading-5 m-0 p-2 px-4 rounded-lg transition-all duration-200 ${
+              messageType === 'success' 
+                ? 'text-green-800 bg-green-100 border border-green-300' 
+                : 'text-red-800 bg-red-100 border border-red-300'
+            }`}>
+              {message}
+            </div>
+          )}
+        </div>
       </article>
       
       <div className="box-border flex flex-col items-start gap-1 w-full m-0 p-0">
-        <h2 className="box-border text-[#141100] text-[51px] font-semibold leading-[51px] tracking-[0.51px] m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+        <h2 className="box-border text-[#141100] text-[40px] font-semibold leading-[40px] tracking-[0.40px] m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Stay Connected
         </h2>
         <div className="box-border flex items-end gap-[105px] w-full m-0 p-0 max-md:flex-col max-md:gap-[30px]">

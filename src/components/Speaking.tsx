@@ -2,9 +2,9 @@ import React from 'react';
 
 const Speaking: React.FC = () => {
   return (
-  <section className="box-border flex w-full flex-col justify-center items-center gap-20 bg-[#FFEEA1] m-0 mt-[80px] mb-[80px] py-[60px] max-md:py-10 max-sm:py-[30px]">
-      <div className="box-border flex w-full max-w-[1082px] flex-col justify-center items-center gap-10 m-0 px-[60px] max-md:px-[30px] max-sm:px-5">
-        <h2 className="box-border text-[51px] font-semibold leading-[51px] tracking-[0.51px] bg-clip-text text-center m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+  <section className="box-border flex w-full flex-col justify-center items-center gap-12 bg-[#FFEEA1] m-0 mt-[80px] mb-[80px] py-[40px] max-md:py-8 max-sm:py-5">
+      <div className="box-border flex w-full max-w-[1082px] flex-col justify-center items-center gap-6 m-0 px-[60px] max-md:px-[30px] max-sm:px-5">
+        <h2 className="box-border text-[40px] font-semibold leading-[40px] tracking-[0.40px] bg-clip-text text-center m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Interested in Speaking?
         </h2>
         <p className="box-border text-black text-center text-xl font-normal leading-[30px] m-0 p-0 max-md:text-lg max-sm:text-base">

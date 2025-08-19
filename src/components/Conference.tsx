@@ -22,7 +22,7 @@ const Conference: React.FC = () => {
       <article className="box-border flex flex-col items-start gap-[40px] w-full border bg-[#FFEEA1] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:gap-6 max-md:px-[30px] max-md:py-10 max-sm:gap-5 max-sm:px-5 max-sm:py-[30px]" style={{position: 'relative', overflow: 'hidden'}}>
         <img src="/backkkimage.png" alt="Conference Background" style={{position: 'absolute', right: 0, bottom: 0, width: '600px', height: 'auto', opacity: 0.25, zIndex: 0, pointerEvents: 'none'}} />
         <div className="box-border flex flex-col items-start gap-6 w-full m-0 p-0">
-          <h2 className="box-border text-[51px] font-normal leading-[51px] tracking-[0.51px] bg-clip-text m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+          <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
             Conference Day, Oct. 19th
           </h2>
           <div className="box-border flex items-center gap-3 flex-wrap m-0 p-0 max-md:flex-col max-md:items-start">
@@ -53,7 +53,7 @@ const Conference: React.FC = () => {
         </p>
         
         <div className="box-border flex flex-col items-start gap-9 w-full border bg-[#FFF5C8] m-0 p-9 rounded-lg border-solid border-[#483B00] max-md:p-6 max-sm:p-5">
-          <h3 className="box-border text-[#483B00] text-[35px] font-semibold leading-[43.75px] m-0 p-0 max-md:text-[28px] max-sm:text-2xl">
+          <h3 className="box-border text-[#483B00] text-[28px] font-semibold leading-[32px] m-0 p-0 max-md:text-2xl max-sm:text-xl">
             Who Should Attend?
           </h3>
           <div className="box-border flex flex-col items-start gap-[21px] w-full m-0 p-0">
@@ -70,7 +70,7 @@ const Conference: React.FC = () => {
         </div>
         
         <div className="box-border flex flex-col items-start gap-12 w-full border m-0 p-9 rounded-lg border-solid border-[#483B00] max-md:p-6 max-sm:p-5">
-          <h3 className="box-border text-[#483B00] text-[35px] font-semibold leading-[43.75px] m-0 p-0 max-md:text-[28px] max-sm:text-2xl">
+          <h3 className="box-border text-[#483B00] text-[28px] font-semibold leading-[32px] m-0 p-0 max-md:text-2xl max-sm:text-xl">
             What you Stand to Benefit.
           </h3>
           <div className="box-border flex flex-col items-start gap-2.5 w-full m-0 p-0">

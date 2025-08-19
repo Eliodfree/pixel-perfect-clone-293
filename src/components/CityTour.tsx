@@ -12,7 +12,7 @@ const CityTour: React.FC = () => {
     <section className="box-border flex flex-col items-start gap-20 w-full border bg-[#FFFDF4] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:px-[30px] max-md:py-10 max-sm:px-5 max-sm:py-[30px]">
       <div className="box-border flex flex-col items-start gap-10 w-full m-0 p-0">
         <div className="box-border flex flex-col items-start gap-5 w-full m-0 p-0">
-          <h2 className="box-border text-[51px] font-normal leading-[51px] tracking-[0.51px] bg-clip-text m-0 p-0 max-md:text-4xl max-sm:text-[28px]">
+          <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
             City Tour at Jinja, Exclusive Oct. 16th
           </h2>
           <div className="box-border flex items-center gap-3 flex-wrap m-0 p-0 max-md:flex-col max-md:items-start">

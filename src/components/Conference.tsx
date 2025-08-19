@@ -59,11 +59,21 @@ const Conference: React.FC = () => {
           <div className="box-border flex flex-col items-start gap-[21px] w-full m-0 p-0">
             {attendeeTypes.map((row, rowIndex) => (
               <div key={rowIndex} className="box-border flex items-center gap-3 w-full m-0 p-0 max-md:flex-col max-md:items-stretch">
-                {row.map((type, index) => (
-                  <span key={index} className="box-border gap-2.5 flex-1 text-[#141100] text-xl font-medium leading-[25px] m-0 px-5 py-1.5 rounded-[500px] border-[0.5px] border-solid border-[#7C6600] max-md:text-base max-sm:text-sm max-sm:px-[15px] max-sm:py-1">
-                    {type}
-                  </span>
-                ))}
+                {row.map((type, index) => {
+                  const specialTypes = [
+                    "Tech entrepreneurs",
+                    "Tech enthusiasts & students", 
+                    "Policy makers & regulators",
+                    "Investors & venture capitalists"
+                  ];
+                  const hasSpecialBg = specialTypes.includes(type);
+                  
+                  return (
+                    <span key={index} className={`box-border gap-2.5 flex-1 text-[#141100] text-xl font-medium leading-[25px] m-0 px-5 py-1.5 rounded-[500px] border-[0.5px] border-solid border-[#7C6600] max-md:text-base max-sm:text-sm max-sm:px-[15px] max-sm:py-1 ${hasSpecialBg ? 'bg-[#FFEEA1]' : ''}`}>
+                      {type}
+                    </span>
+                  );
+                })}
               </div>
             ))}
           </div>

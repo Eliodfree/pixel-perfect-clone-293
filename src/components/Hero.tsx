@@ -102,7 +102,7 @@ const Hero = () => {
         
         {/* Call to Action Button */}
         <div className="relative z-20 flex justify-center mt-[10px] max-md:mt-[12px] max-sm:mt-[10px]">
-           <button className="box-border gap-2.5 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFD000] transition-colors">
+           <button className="box-border gap-2 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[80px] py-[20px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFD000] transition-colors">
           Register to Attend
         </button>
         

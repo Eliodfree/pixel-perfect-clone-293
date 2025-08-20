@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Hero = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className="bg-[rgba(255,251,234,1)] flex flex-col overflow-hidden items-stretch">
       <div className="flex flex-col relative min-h-screen w-full items-center pt-6 pb-[20px] px-20 max-md:max-w-full max-md:pb-[15px] max-md:px-5 max-sm:px-3 max-sm:pb-[10px] max-sm:min-h-screen">
@@ -54,12 +60,10 @@ const Hero = () => {
               </button>
             </div>
             {/* Mobile Hamburger Menu */}
-            <button className="hidden max-sm:block" onClick={() => {
-              const mobileMenu = document.getElementById('mobile-menu');
-              if (mobileMenu) {
-                mobileMenu.classList.toggle('hidden');
-              }
-            }}>
+            <button 
+              className="hidden max-sm:block" 
+              onClick={toggleMobileMenu}
+            >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 12H21" stroke="#141100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M3 6H21" stroke="#141100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -68,20 +72,28 @@ const Hero = () => {
             </button>
           </div>
           
-          {/* Mobile Navigation Menu */}
-          <div id="mobile-menu" className="hidden max-sm:flex max-sm:flex-row max-sm:gap-2 max-sm:w-full max-sm:justify-center max-sm:mt-2">
-            <button className="box-border gap-2 text-[#141100] text-xs font-semibold leading-5 cursor-pointer m-0 px-3 py-1.5 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+          {/* Mobile Dropdown Menu */}
+          <div className={`${isMobileMenuOpen ? 'max-sm:flex' : 'max-sm:hidden'} hidden max-sm:absolute max-sm:top-full max-sm:right-0 max-sm:mt-2 max-sm:w-64 max-sm:bg-[rgba(255,247,213,0.95)] max-sm:backdrop-blur-[5px] max-sm:border-2 max-sm:border-solid max-sm:border-[#FEEC96] max-sm:rounded-[15px] max-sm:p-3 max-sm:flex-col max-sm:gap-2 max-sm:shadow-lg max-sm:z-50`}>
+            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               About Event
             </button>
-            <button className="box-border gap-2 text-[#141100] text-xs font-semibold leading-5 cursor-pointer m-0 px-3 py-1.5 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Schedule
             </button>
-            <button className="box-border gap-2 text-[#141100] text-xs font-semibold leading-5 cursor-pointer m-0 px-3 py-1.5 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Hackathon
             </button>
-            <button className="box-border gap-2 text-[#141100] text-xs font-semibold leading-5 cursor-pointer m-0 px-3 py-1.5 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Speakers
             </button>
+            <div className="max-sm:flex max-sm:flex-col max-sm:gap-2 max-sm:mt-2 max-sm:pt-2 max-sm:border-t max-sm:border-[rgba(255,255,255,0.2)]">
+              <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+                Become a Sponsor
+              </button>
+              <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#F9CC00] m-0 px-3 py-2 rounded-[500px] hover:bg-[#E6B800] transition-colors">
+                Apply to Speak
+              </button>
+            </div>
           </div>
           
           <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:gap-2 max-sm:w-full max-sm:justify-center max-sm:flex-wrap">

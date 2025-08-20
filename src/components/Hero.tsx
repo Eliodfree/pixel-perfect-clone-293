@@ -131,9 +131,11 @@ const Hero = () => {
           
           {/* Call to Action Button - Small Screen Version */}
           <div className="mb-4">
-            <button className="box-border gap-2 border text-black text-sm font-medium cursor-pointer bg-[#FFD51A] px-8 py-[12px] rounded-[500px] border-solid border-[#483B00] hover:bg-[#FFD000] transition-colors">
-              Register to Attend
-            </button>
+            <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
+              <button className="box-border gap-2 border text-black text-sm font-medium cursor-pointer bg-[#FFD51A] px-8 py-[12px] rounded-[500px] border-solid border-[#483B00] hover:bg-[#FFD000] transition-colors">
+                Register to Attend
+              </button>
+            </a>
           </div>
         </div>
 
@@ -172,10 +174,11 @@ const Hero = () => {
         
         {/* Call to Action Button - Only on Large Screens */}
         <div className={`relative z-20 flex justify-center mt-[10px] max-md:mt-[12px] max-sm:hidden ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
-           <button className="box-border gap-2 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[80px] py-[20px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 hover:bg-[#FFD000] transition-colors">
-          Register to Attend
-        </button>
-        
+           <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
+             <button className="box-border gap-2 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[80px] py-[20px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 hover:bg-[#FFD000] transition-colors">
+               Register to Attend
+             </button>
+           </a>
         </div>
 
         {/* Bottom Section - Event Info Badges */}

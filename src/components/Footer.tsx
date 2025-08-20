@@ -53,14 +53,9 @@ const Footer: React.FC = () => {
         <div className="flex justify-between items-center px-6 py-4 mb-8 max-md:flex-col max-md:gap-4 max-md:px-0">
           <nav className="flex items-center gap-8 max-md:flex-col max-md:gap-3">
             <a href="#terms" className="text-[#FFF7D5] text-sm font-medium leading-5 cursor-pointer max-sm:text-xs hover:opacity-80 transition-opacity">
-              Terms of use
+              All rights reserved
             </a>
-            <a href="#privacy" className="text-[#FFF7D5] text-sm font-medium leading-5 cursor-pointer max-sm:text-xs hover:opacity-80 transition-opacity">
-              Privacy policy
-            </a>
-            <a href="#cookies" className="text-[#FFF7D5] text-sm font-medium leading-5 cursor-pointer max-sm:text-xs hover:opacity-80 transition-opacity">
-              Cookies policy
-            </a>
+            
           </nav>
           <div className="flex items-center gap-4 max-sm:gap-2">
             <button className="w-10 h-10 bg-[#FFE677] rounded-full flex items-center justify-center hover:bg-[#FFE055] transition-colors max-sm:w-8 max-sm:h-8">

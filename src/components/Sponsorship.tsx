@@ -140,20 +140,24 @@ const Sponsorship: React.FC = () => {
                 <path d="M60.7045 32.0837L51.0098 39.4423V27.9955L54.5566 25.309C57.7488 22.8561 60.7045 25.309 60.7045 28.3459" fill="#FBBC04"></path>
               </svg>
             </div>
-            <button className="box-border flex w-[77px] h-[79px] justify-center items-center gap-2.5 bg-[#EFC400] m-0 p-2.5 rounded-[900px] max-sm:w-[60px] max-sm:h-[60px] hover:bg-[#E6B800] transition-colors">
-              <div>
-                <svg width="36" height="38" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="twitter-svg" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '35px', height: '37px'}}>
-                  <path d="M27.4724 4.01953H32.2966L21.7572 16.7537L34.1559 34.082H24.4464L16.8426 23.5725L8.14219 34.082H3.3151L14.588 20.4614L2.69531 4.01953H12.6484L19.5216 13.6257L27.4724 4.01953ZM25.7793 31.0295H28.4524L11.1974 6.9117H8.32885L25.7793 31.0295Z" fill="#141100"></path>
-                </svg>
-              </div>
-            </button>
-            <button className="box-border flex w-[77px] h-[79px] justify-center items-center gap-2.5 bg-[#EFC400] m-0 p-2.5 rounded-[900px] max-sm:w-[60px] max-sm:h-[60px] hover:bg-[#E6B800] transition-colors">
-              <div>
-                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" className="telegram-svg" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '41px', height: '41px'}}>
-                  <path fillRule="evenodd" clipRule="evenodd" d="M34.709 8.11864C35.1312 7.94096 35.5933 7.87967 36.0471 7.94117C36.501 8.00267 36.9301 8.1847 37.2898 8.46831C37.6494 8.75192 37.9265 9.12675 38.0922 9.55378C38.2578 9.98081 38.306 10.4444 38.2316 10.8964L34.3571 34.3979C33.9813 36.6649 31.4939 37.9649 29.4149 36.8357C27.6758 35.891 25.0928 34.4355 22.7695 32.9168C21.6078 32.1566 18.0494 29.7222 18.4867 27.99C18.8625 26.5088 24.8417 20.9431 28.2584 17.6341C29.5994 16.334 28.9878 15.5841 27.4042 16.7799C23.4716 19.749 17.1576 24.2641 15.07 25.5351C13.2284 26.6558 12.2684 26.8471 11.1204 26.6558C9.02594 26.3073 7.08357 25.7674 5.49823 25.1097C3.35598 24.2214 3.46019 21.2762 5.49653 20.4186L34.709 8.11864Z" fill="#141100"></path>
-                </svg>
-              </div>
-            </button>
+            <a href="https://x.com/ETHNile_" target="_blank" rel="noopener noreferrer">
+              <button className="box-border flex w-[77px] h-[79px] justify-center items-center gap-2.5 bg-[#EFC400] m-0 p-2.5 rounded-[900px] max-sm:w-[60px] max-sm:h-[60px] hover:bg-[#E6B800] transition-colors">
+                <div>
+                  <svg width="36" height="38" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="twitter-svg" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '35px', height: '37px'}}>
+                    <path d="M27.4724 4.01953H32.2966L21.7572 16.7537L34.1559 34.082H24.4464L16.8426 23.5725L8.14219 34.082H3.3151L14.588 20.4614L2.69531 4.01953H12.6484L19.5216 13.6257L27.4724 4.01953ZM25.7793 31.0295H28.4524L11.1974 6.9117H8.32885L25.7793 31.0295Z" fill="#141100"></path>
+                  </svg>
+                </div>
+              </button>
+            </a>
+            <a href="https://t.me/+b4uEboGC5sg3NjNk" target="_blank" rel="noopener noreferrer">
+              <button className="box-border flex w-[77px] h-[79px] justify-center items-center gap-2.5 bg-[#EFC400] m-0 p-2.5 rounded-[900px] max-sm:w-[60px] max-sm:h-[60px] hover:bg-[#E6B800] transition-colors">
+                <div>
+                  <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" className="telegram-svg" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '41px', height: '41px'}}>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M34.709 8.11864C35.1312 7.94096 35.5933 7.87967 36.0471 7.94117C36.501 8.00267 36.9301 8.1847 37.2898 8.46831C37.6494 8.75192 37.9265 9.12675 38.0922 9.55378C38.2578 9.98081 38.306 10.4444 38.2316 10.8964L34.3571 34.3979C33.9813 36.6649 31.4939 37.9649 29.4149 36.8357C27.6758 35.891 25.0928 34.4355 22.7695 32.9168C21.6078 32.1566 18.0494 29.7222 18.4867 27.99C18.8625 26.5088 24.8417 20.9431 28.2584 17.6341C29.5994 16.334 28.9878 15.5841 27.4042 16.7799C23.4716 19.749 17.1576 24.2641 15.07 25.5351C13.2284 26.6558 12.2684 26.8471 11.1204 26.6558C9.02594 26.3073 7.08357 25.7674 5.49823 25.1097C3.35598 24.2214 3.46019 21.2762 5.49653 20.4186L34.709 8.11864Z" fill="#141100"></path>
+                  </svg>
+                </div>
+              </button>
+            </a>
           </div>
         </div>
       </div>

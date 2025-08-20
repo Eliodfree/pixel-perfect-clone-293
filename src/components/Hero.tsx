@@ -96,11 +96,11 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:gap-2 max-sm:w-full max-sm:justify-center max-sm:flex-wrap">
-            <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 max-sm:text-[10px] max-sm:px-2.5 max-sm:py-1 hover:bg-[#FFE055] transition-colors">
+          <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:hidden max-md:gap-2">
+            <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
               Become a Sponsor
             </button>
-            <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer w-[130px] bg-[#F9CC00] m-0 px-4 py-2 rounded-[200px] max-md:text-xs max-md:w-auto max-md:px-3 max-md:py-1.5 max-sm:text-[10px] max-sm:px-2.5 max-sm:py-1 max-sm:w-auto hover:bg-[#E6B800] transition-colors">
+            <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer w-[130px] bg-[#F9CC00] m-0 px-4 py-2 rounded-[200px] max-md:text-xs max-md:w-auto max-md:px-3 max-md:py-1.5 hover:bg-[#E6B800] transition-colors">
               Apply to Speak
             </button>
           </div>

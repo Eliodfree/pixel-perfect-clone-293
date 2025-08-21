@@ -22,7 +22,7 @@ const About: React.FC = () => {
         <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
           <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
             <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
-              City Tour to Jinja,
+              City Tour to River Nile,
               <br className="box-border m-0 p-0" />
               Exclusive
             </h3>
@@ -56,12 +56,12 @@ const About: React.FC = () => {
         <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
           <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
             <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
-              The Pearl of Africa
+              The Pearl of Africa,
               <br className="box-border m-0 p-0" />
-              Kampala,Uganda
+              Uganda
             </h3>
             <div className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              City
+              Kampala
             </div>
           </div>
         </article>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hackathon: React.FC = () => {
   return (
-    <section className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFF7D5] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
+    <section id="hackathon" className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFF7D5] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
       <div className="box-border flex flex-col items-start gap-6 w-full m-0 p-0">
         <div className="box-border flex flex-col items-start gap-5 w-full m-0 p-0">
           <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">

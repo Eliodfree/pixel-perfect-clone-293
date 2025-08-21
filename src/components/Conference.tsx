@@ -18,7 +18,7 @@ const Conference: React.FC = () => {
   ];
 
   return (
-    <section className="box-border flex flex-col items-start gap-9 w-full m-0 p-0">
+    <section id="conference" className="box-border flex flex-col items-start gap-9 w-full m-0 p-0">
       <article className="box-border flex flex-col items-start gap-[40px] w-full border bg-[#FFEEA1] m-0 p-[60px] rounded-[20px] border-solid border-black max-md:gap-6 max-md:px-[30px] max-md:py-10 max-sm:gap-5 max-sm:px-5 max-sm:py-[30px]" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
         <div className="box-border flex flex-col items-start gap-6 w-full m-0 p-0">
           <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">

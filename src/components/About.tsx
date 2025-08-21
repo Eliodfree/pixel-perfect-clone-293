@@ -2,7 +2,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section className="box-border flex flex-col items-center gap-2 m-0 p-0 ">
+    <section id="about" className="box-border flex flex-col items-center gap-2 m-0 p-0 ">
       <div className="box-border flex flex-col items-center gap-4 text-center m-0 p-0 ">
         <h2 className="box-border text-[42px] font-extrabold leading-[42px] tracking-[0.42px] m-0 p-0 max-md:text-3xl max-sm:text-[24px]">
   <span className="text-yellow-800">About </span>

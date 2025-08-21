@@ -51,7 +51,7 @@ const Sponsorship: React.FC = () => {
   };
 
   return (
-  <section className="box-border flex w-full flex-col items-start gap-8 border bg-[#FFF5CA] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
+  <section id="sponsorship" className="box-border flex w-full flex-col items-start gap-8 border bg-[#FFF5CA] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
   <article className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFD82A] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
         <h2 className="box-border text-[40px] font-semibold leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Sponsorship Opportunity

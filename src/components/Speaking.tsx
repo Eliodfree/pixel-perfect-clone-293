@@ -2,7 +2,7 @@ import React from 'react';
 
 const Speaking: React.FC = () => {
   return (
-  <section className="box-border flex w-full flex-col justify-center items-center gap-12 bg-[#FFEEA1] m-0 mt-[80px] mb-[80px] py-[40px] max-md:py-8 max-sm:py-5">
+  <section id="speaking" className="box-border flex w-full flex-col justify-center items-center gap-12 bg-[#FFEEA1] m-0 mt-[80px] mb-[80px] py-[40px] max-md:py-8 max-sm:py-5">
       <div className="box-border flex w-full max-w-[1082px] flex-col justify-center items-center gap-6 m-0 px-[60px] max-md:px-[30px] max-sm:px-5">
         <h2 className="box-border text-[40px] font-semibold leading-[40px] tracking-[0.40px] bg-clip-text text-center m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Interested in Speaking?

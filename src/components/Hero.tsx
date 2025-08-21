@@ -46,18 +46,18 @@ const Hero = () => {
               </svg>
             </div>
             <div className="box-border flex items-center gap-0.5 m-0 p-0 max-md:hidden">
-              <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+              <a href="#about" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
                 About Event
-              </button>
-              <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+              </a>
+              <a href="#conference" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
                 Schedule
-              </button>
-              <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+              </a>
+              <a href="#hackathon" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
                 Hackathon
-              </button>
-              <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+              </a>
+              <a href="#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
                 Speakers
-              </button>
+              </a>
             </div>
             {/* Mobile Hamburger Menu */}
             <button 
@@ -74,35 +74,35 @@ const Hero = () => {
           
           {/* Mobile Dropdown Menu */}
           <div className={`${isMobileMenuOpen ? 'max-sm:flex' : 'max-sm:hidden'} hidden max-sm:absolute max-sm:top-full max-sm:right-0 max-sm:mt-2 max-sm:w-64 max-sm:bg-[rgba(255,247,213,0.95)] max-sm:backdrop-blur-[10px] max-sm:border-2 max-sm:border-solid max-sm:border-[#FEEC96] max-sm:rounded-[15px] max-sm:p-3 max-sm:flex-col max-sm:gap-2 max-sm:shadow-lg max-sm:z-50`}>
-            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+            <a href="#about" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               About Event
-            </button>
-            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+            </a>
+            <a href="#conference" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Schedule
-            </button>
-            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+            </a>
+            <a href="#hackathon" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Hackathon
-            </button>
-            <button className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+            </a>
+            <a href="#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Speakers
-            </button>
+            </a>
             <div className="max-sm:flex max-sm:flex-col max-sm:gap-2 max-sm:mt-2 max-sm:pt-2 max-sm:border-t max-sm:border-[rgba(255,255,255,0.2)]">
-              <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+              <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
                 Become a Sponsor
-              </button>
-              <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#F9CC00] m-0 px-3 py-2 rounded-[500px] hover:bg-[#E6B800] transition-colors">
+              </a>
+              <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#F9CC00] m-0 px-3 py-2 rounded-[500px] hover:bg-[#E6B800] transition-colors">
                 Apply to Speak
-              </button>
+              </a>
             </div>
           </div>
           
           <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:hidden max-md:gap-2">
-            <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
+            <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
               Become a Sponsor
-            </button>
-            <button className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer w-[130px] bg-[#F9CC00] m-0 px-4 py-2 rounded-[200px] max-md:text-xs max-md:w-auto max-md:px-3 max-md:py-1.5 hover:bg-[#E6B800] transition-colors">
+            </a>
+            <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer w-[130px] bg-[#F9CC00] m-0 px-4 py-2 rounded-[200px] max-md:text-xs max-md:w-auto max-md:px-3 max-md:py-1.5 hover:bg-[#E6B800] transition-colors">
               Apply to Speak
-            </button>
+            </a>
           </div>
         </div>
       </nav>

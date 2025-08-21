@@ -10,11 +10,11 @@ const About: React.FC = () => {
 </h2>
 
         <p className="box-border text-black text-lg font-normal leading-[26px] m-0 p-0 max-md:text-base max-sm:text-sm">
-          Get ready for history in the making. EthNile is the very first
+          EthNile is the very first
           Ethereum-focused event in Kampala, a landmark moment for Uganda's
           tech visionaries and Web3 community. Inspired by the legendary
-          River Nile, the longest river in the world that begins just an
-          hour away in Jinja, EthNile channels that same sense of flow,
+          River Nile, the longest river in the world that begins 
+          in Jinja, EthNile channels that same sense of flow,
           connection, and boundless reach into the blockchain ecosystem.
         </p>
       </div>
@@ -56,12 +56,12 @@ const About: React.FC = () => {
         <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
           <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
             <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
-              Ndere Cultural
+              The Pearl of Africa
               <br className="box-border m-0 p-0" />
-              Centre, Kampala
+              Kampala,Uganda
             </h3>
             <div className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Venue
+              City
             </div>
           </div>
         </article>

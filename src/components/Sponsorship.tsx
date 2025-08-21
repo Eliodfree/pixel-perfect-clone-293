@@ -57,10 +57,9 @@ const Sponsorship: React.FC = () => {
           Sponsorship Opportunity
         </h2>
         <p className="box-border text-[#141100] text-xl font-normal leading-[25px] m-0 p-0 max-sm:text-base">
-          Showcase your brand at Africa's premier blockchain & tech
-          event. Connect with innovators, investors, and decision-makers,
-          gain media exposure, and position your company as a leader in
-          Africa's digital future.
+          Showcase your brand at Uganda's  first Ethereum community Event. Connect with innovators, investors, web3 communities, tech visionaries, and decision-makers,
+          gain media exposure, and position your brand as a leader in
+          Uganda's  and Africa's digital future.
         </p>
   <button className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors self-start">
           Explore
@@ -130,7 +129,7 @@ const Sponsorship: React.FC = () => {
             ideas, and collaborate on blockchain projects.
           </p>
           <div className="box-border flex justify-center items-center gap-[22px] m-0 p-0 max-sm:gap-[15px]">
-            <div>
+            {/* <div>
               <svg width="78" height="80" viewBox="0 0 78 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="social-icon" style={{margin: 0, padding: '10px', boxSizing: 'border-box', display: 'flex', width: '77px', height: '79px', justifyContent: 'center', alignItems: 'center', gap: '10px', borderRadius: '900px', background: '#EFC400'}}>
                 <rect x="0.92334" y="0.550781" width="77" height="79" rx="38.5" fill="#FFD51A"></rect>
                 <path d="M27.8369 55.795V39.2088L18.1421 31.8501V52.2909C18.1421 54.627 19.3244 55.795 21.689 55.795" fill="#4285F4"></path>
@@ -139,7 +138,7 @@ const Sponsorship: React.FC = () => {
                 <path d="M18.1421 32.0837L27.8369 39.4423V27.9955L24.29 25.309C21.0978 22.8561 18.1421 25.309 18.1421 28.3459" fill="#C5221F"></path>
                 <path d="M60.7045 32.0837L51.0098 39.4423V27.9955L54.5566 25.309C57.7488 22.8561 60.7045 25.309 60.7045 28.3459" fill="#FBBC04"></path>
               </svg>
-            </div>
+            </div> */}
             <a href="https://x.com/ETHNile_" target="_blank" rel="noopener noreferrer">
               <button className="box-border flex w-[77px] h-[79px] justify-center items-center gap-2.5 bg-[#EFC400] m-0 p-2.5 rounded-[900px] max-sm:w-[60px] max-sm:h-[60px] hover:bg-[#E6B800] transition-colors">
                 <div>

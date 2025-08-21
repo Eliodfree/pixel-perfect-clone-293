@@ -5,16 +5,16 @@ const Conference: React.FC = () => {
     "Build – Create real blockchain solutions in our hackathon.",
     "Learn – Hear from global & African tech leaders.",
     "Connect – Network with developers, founders, and investors.",
-    "Experience – Explore Uganda's culture and the Nile.",
+    "Experience – Explore Uganda's culture and the R.Nile ,the Source.",
     "Grow – Gain skills, mentorship, and new opportunities.",
     "Collaborate – Team up with innovators across industries.",
-    "Access – Get exclusive resources, tools, and partner offers."
+    "Access – Get granted, exclusive resources, tools, and partner offers."
   ];
 
   const attendeeTypes = [
-    ["Blockchain engineers", "Tech entrepreneurs", "Blockchain engineers", "startup founders"],
-    ["Policy makers & regulators", "Policy makers & Researchers", "Tech enthusiasts & students"],
-    ["Academics in technology", "Investors & venture capitalists", "Designers & product managers"]
+    ["Blockchain engineers", "Tech entrepreneurs", "Enterprises", " founders"],
+    ["Policy makers & regulators", "Bankers & financial experts", "Tech enthusiasts & students"],
+    ["Startups", "Investors & venture capitalists", "Designers & product managers"]
   ];
 
   return (
@@ -45,9 +45,9 @@ const Conference: React.FC = () => {
         </div>
         <p className="box-border text-black text-xl font-normal leading-[30px] m-0 p-0 max-sm:text-base">
           The EthNile 2025 Conference is the highlight of the
-          event—bringing together leading voices in blockchain,
+          event bringing together leading voices in blockchain,
           technology, and innovation to share insights, trends, and
-          strategies shaping Africa's digital future. It will feature a
+          strategies shaping Uganda's digital future and Africa at large. It will feature a
           dynamic mix of keynotes, panel discussions, and breakout
           sessions designed to inspire action and spark collaboration.
         </p>

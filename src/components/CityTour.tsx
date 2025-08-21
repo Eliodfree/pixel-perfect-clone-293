@@ -13,7 +13,7 @@ const CityTour: React.FC = () => {
       <div className="box-border flex flex-col items-start gap-10 w-full m-0 p-0">
         <div className="box-border flex flex-col items-start gap-5 w-full m-0 p-0">
           <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
-            City Tour at Jinja, Exclusive Oct. 16th
+            City Tour at River Nile, Exclusive Oct. 16th
           </h2>
           <div className="box-border flex items-center gap-3 flex-wrap m-0 p-0 max-md:flex-col max-md:items-start">
             <span className="box-border gap-2.5 text-black text-lg font-medium leading-[18px] bg-[#FEF3C0] m-0 px-5 py-1.5 rounded-[500px] border-[0.5px] border-solid border-[#7C6600] max-md:text-base max-sm:text-sm max-sm:px-[15px] max-sm:py-1">
@@ -34,15 +34,15 @@ const CityTour: React.FC = () => {
               Photo Opportunities
             </span>
             <span className="box-border gap-2.5 text-black text-lg font-medium leading-[18px] bg-[#FFEEA1] m-0 px-5 py-1.5 rounded-[500px] border-[0.5px] border-solid border-[#7C6600] max-md:text-base max-sm:text-sm max-sm:px-[15px] max-sm:py-1">
-              Supply Chain & Logistics
+              City Tour & Vibes
             </span>
           </div>
         </div>
         <p className="box-border text-black text-xl font-normal leading-[30px] m-0 p-0 max-sm:text-base">
-          As part of EthNile 2025, participants will embark on a scenic and
+          As part of EthNile 2025, Exclusive participants will embark on a scenic and
           cultural City Tour to Jinja, the legendary birthplace of the River
           Nile. This tour is the perfect blend of exploration, networking,
-          and relaxation—giving attendees a chance to connect outside the
+          and relaxation giving attendees a chance to connect outside the
           conference and hackathon environment.
         </p>
         <div className="box-border flex items-start gap-5 w-full m-0 p-0 overflow-x-auto">

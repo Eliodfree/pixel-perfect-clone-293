@@ -80,42 +80,11 @@ const Sponsorship: React.FC = () => {
           reveals, ticket sales, and special offers.. Subscribe now and get
           updates delivered straight to your inbox.
         </p>
-        <div className="box-border flex flex-col items-start gap-4 w-full m-0 p-0">
-          <form onSubmit={handleSubscribe} className="box-border flex justify-between items-center w-full border bg-[#FFF6CC] m-0 pl-[30px] pr-[15px] py-[15px] rounded-[500px] border-solid border-[#483B00] max-md:flex-col max-md:gap-[15px] max-md:p-5 transition-all duration-200 hover:shadow-md focus-within:shadow-lg focus-within:border-[#7C6600]">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (message && messageType === 'error') {
-                  setMessage('');
-                  setMessageType('');
-                }
-              }}
-              placeholder="Enter your email address"
-              className="box-border text-[#141100] text-lg font-medium leading-[18px] bg-transparent border-none outline-none flex-1 m-0 p-0 max-sm:text-base placeholder:text-[rgba(20,17,0,0.60)] focus:placeholder:text-[rgba(20,17,0,0.40)]"
-              required
-              disabled={isSubmitting}
-            />
-            <button
-              type="submit"
-              disabled={isSubmitting || !email.trim()}
-              className="box-border gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFD51A] m-0 px-[50px] py-5 rounded-[500px] border-solid border-[#483B00] max-md:w-full max-sm:text-base max-sm:px-[30px] max-sm:py-[15px] hover:bg-[#FFD000] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#FFD51A]"
-            >
-              {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-            </button>
-          </form>
-          
-          {message && (
-            <div className={`box-border text-sm font-medium leading-5 m-0 p-2 px-4 rounded-lg transition-all duration-200 ${
-              messageType === 'success' 
-                ? 'text-green-800 bg-green-100 border border-green-300' 
-                : 'text-red-800 bg-red-100 border border-red-300'
-            }`}>
-              {message}
-            </div>
-          )}
-        </div>
+        <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
+          <button className="box-border gap-2.5 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFD000] transition-colors">
+            Register to Attend
+          </button>
+        </a>
       </article>
       
       <div className="box-border flex flex-col items-start gap-1 w-full m-0 p-0">
@@ -123,7 +92,7 @@ const Sponsorship: React.FC = () => {
           Stay Connected
         </h2>
         <div className="box-border flex items-end gap-[105px] w-full m-0 p-0 max-md:flex-col max-md:gap-[30px]">
-          <p className="box-border w-[651px] text-[#535353] text-xl font-medium leading-[25px] m-0 p-0 max-md:w-full max-sm:text-base">
+          <p className="box-border w-[651px] text-black text-xl font-normal leading-[30px] m-0 p-0 max-md:w-full max-sm:text-base">
             Be part of the conversation before, during, and after EthNile
             2025. Join our community to network with innovators, share
             ideas, and collaborate on blockchain projects.

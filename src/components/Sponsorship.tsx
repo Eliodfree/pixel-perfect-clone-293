@@ -61,14 +61,16 @@ const Sponsorship: React.FC = () => {
           gain media exposure, and position your brand as a leader in
           Uganda's  and Africa's digital future.
         </p>
-  <button className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors self-start">
-          Explore
-          <div>
-            <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '18px', height: '18px'}}>
-              <path d="M15.6147 3.45361L15.6147 11.5828L13.9889 11.5828L13.9889 6.21755L4.55899 15.6475L3.4209 14.5094L12.8508 5.07946L7.48551 5.07946L7.48551 3.45361L15.6147 3.45361Z" fill="#7C6600"></path>
-            </svg>
-          </div>
-        </button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHJD-2E-qmxz7eI1lf5TULD4WCYYkD-IdZu5dHim_EIoL1TQ/viewform" target="_blank" rel="noopener noreferrer">
+          <button className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors self-start">
+            Explore
+            <div>
+              <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-icon" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '18px', height: '18px'}}>
+                <path d="M15.6147 3.45361L15.6147 11.5828L13.9889 11.5828L13.9889 6.21755L4.55899 15.6475L3.4209 14.5094L12.8508 5.07946L7.48551 5.07946L7.48551 3.45361L15.6147 3.45361Z" fill="#7C6600"></path>
+              </svg>
+            </div>
+          </button>
+        </a>
       </article>
       
       <article className="box-border flex flex-col items-start gap-6 w-full border bg-[#FFFDF4] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">

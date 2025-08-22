@@ -2,10 +2,10 @@ import React from 'react';
 
 const CityTour: React.FC = () => {
   const tourImages = [
-    "https://api.builder.io/api/v1/image/assets/TEMP/a89c2c1e71e5ffab8a300b5090343ab4fa0469c4?width=500",
-    "https://api.builder.io/api/v1/image/assets/TEMP/b4fc6ef3907e210225f41b53d99a5c00530dd267?width=500",
-    "https://api.builder.io/api/v1/image/assets/TEMP/36a34b0ee14269a634d6dd0550547c1412d60665?width=500",
-    "https://api.builder.io/api/v1/image/assets/TEMP/1de6dff1547cf2186cce8d02479461280924a8e1?width=590"
+    "/River-Nile4.jpg",
+    "/RNILE1.jpeg",
+    "/RNILE2.jpg",
+    "/RNILE3.jpg"
   ];
 
   return (

@@ -96,9 +96,11 @@ const Conference: React.FC = () => {
           </div>
         </div>
         
-        <button className="box-border gap-2.5 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFD000] transition-colors">
-          Register to Attend
-        </button>
+        <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
+          <button className="box-border gap-2.5 border text-black text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-md:text-base max-md:px-[60px] max-md:py-5 max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFD000] transition-colors">
+            Register to Attend
+          </button>
+        </a>
       </article>
     </section>
   );

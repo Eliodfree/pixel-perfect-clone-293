@@ -129,11 +129,20 @@ const Hero = () => {
             />
           </div>
           
+          {/* Event Tagline - Small Screen Version */}
+          <div className="mb-4">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/7f185eac98f20cc1d777075f8dcf9968e627c771?width=865"
+              alt="Event Tagline"
+              className="box-border w-[200px] h-[24px] mb-4 m-0 p-0"
+            />
+          </div>
+
           {/* Call to Action Button - Small Screen Version */}
           <div className="mb-4">
             <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
               <button className="box-border gap-2 border text-black text-sm font-medium cursor-pointer bg-[#FFD51A] px-8 py-[12px] rounded-[500px] border-solid border-[#483B00] hover:bg-[#FFD000] transition-colors">
-                Register to Attend
+                Register 
               </button>
             </a>
           </div>
@@ -194,20 +203,24 @@ const Hero = () => {
             className="box-border absolute w-[410px] h-[212px] m-0 p-0 left-[120px] top-[322px] max-md:hidden"
           />
           <div className="box-border flex items-center gap-1 mt-[5px] m-0 p-0 max-md:flex-col max-md:gap-4">
-            <button className="box-border w-[273px] h-[73px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/0d9f813680454b1805d95919f25b1ee6fb13d727?width=546"
-                alt="Register Now"
-                className="w-full h-full"
-              />
-            </button>
-            <button className="box-border w-[273px] h-[73px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/270c9ed92aacec67f3ba59cf99a75f76154310f7?width=546"
-                alt="Become a Sponsor"
-                className="w-full h-full"
-              />
-            </button>
+            <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
+              <button className="box-border w-[273px] h-[73px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/0d9f813680454b1805d95919f25b1ee6fb13d727?width=546"
+                  alt="Register Now"
+                  className="w-full h-full"
+                />
+              </button>
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScHJD-2E-qmxz7eI1lf5TULD4WCYYkD-IdZu5dHim_EIoL1TQ/viewform" target="_blank" rel="noopener noreferrer">
+              <button className="box-border w-[273px] h-[73px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/270c9ed92aacec67f3ba59cf99a75f76154310f7?width=546"
+                  alt="Become a Sponsor"
+                  className="w-full h-full"
+                />
+              </button>
+            </a>
           </div>
         </div>
 

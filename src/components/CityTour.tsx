@@ -45,12 +45,12 @@ const CityTour: React.FC = () => {
           and relaxation giving attendees a chance to connect outside the
           conference and hackathon environment.
         </p>
-        <div className="box-border flex items-start gap-5 w-full m-0 p-0 overflow-x-auto">
+        <div className="box-border flex items-start gap-5 w-full m-0 p-0 overflow-x-auto overflow-y-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100" style={{scrollbarWidth: 'thin'}}>
           {tourImages.map((image, index) => (
             <div key={index} className="box-border flex items-center gap-0.5 bg-[#FFF7D5] m-0 p-5 flex-shrink-0 max-md:p-[15px]">
               <img
                 src={image}
-                alt=""
+                alt={`River Nile Tour Image ${index + 1}`}
                 className="box-border w-[250px] h-[250px] object-cover m-0 p-0 max-md:w-[200px] max-md:h-[200px] max-sm:w-[150px] max-sm:h-[150px]"
               />
             </div>

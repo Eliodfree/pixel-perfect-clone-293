@@ -106,7 +106,7 @@ const Hero = () => {
           </div>
         </div>
       </nav>
-
+ 
 
         {/* Small Screen Layout - Order: Image, Logo, Button, Badges */}
         <div className={`hidden max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:relative max-sm:z-30 max-sm:mt-20 max-sm:px-4 ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
@@ -204,7 +204,7 @@ const Hero = () => {
           />
           <div className="box-border flex items-center gap-1 mt-[5px] m-0 p-0 max-md:flex-col max-md:gap-4">
             <a href="https://lu.ma/fajfyrbi" target="_blank" rel="noopener noreferrer">
-              <button className="box-border w-[273px] h-[73px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
+              <button className="box-border w-[180px] h-[50px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/0d9f813680454b1805d95919f25b1ee6fb13d727?width=546"
                   alt="Register Now"
@@ -213,7 +213,7 @@ const Hero = () => {
               </button>
             </a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScHJD-2E-qmxz7eI1lf5TULD4WCYYkD-IdZu5dHim_EIoL1TQ/viewform" target="_blank" rel="noopener noreferrer">
-              <button className="box-border w-[273px] h-[73px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
+              <button className="box-border w-[180px] h-[50px] cursor-pointer m-0 p-0 hover:opacity-90 transition-opacity">
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/270c9ed92aacec67f3ba59cf99a75f76154310f7?width=546"
                   alt="Become a Sponsor"

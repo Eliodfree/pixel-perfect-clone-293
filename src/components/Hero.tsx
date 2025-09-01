@@ -90,8 +90,8 @@ const Hero = () => {
               <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
                 Become a Sponsor
               </a>
-              <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#F9CC00] m-0 px-3 py-2 rounded-[500px] hover:bg-[#E6B800] transition-colors">
-                Apply to Speak
+              <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+              Apply to Speak
               </a>
             </div>
           </div>

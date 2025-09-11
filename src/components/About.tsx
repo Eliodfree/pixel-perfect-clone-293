@@ -27,7 +27,7 @@ const About: React.FC = () => {
               Exclusive
             </h3>
             <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Oct. 19, 2025
+              Oct. 21, 2025
             </time>
           </div>
         </article>
@@ -37,7 +37,7 @@ const About: React.FC = () => {
               Hackathon Final Day Submission
             </h3>
             <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Oct. 17, 2025
+              Oct. 24, 2025
             </time>
           </div>
         </article>
@@ -49,7 +49,7 @@ const About: React.FC = () => {
               Conference
             </h3>
             <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Oct. 18, 2025
+              Oct. 25, 2025
             </time>
           </div>
         </article>

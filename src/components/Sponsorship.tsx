@@ -61,7 +61,7 @@ const Sponsorship: React.FC = () => {
           gain media exposure, and position your brand as a leader in
           Uganda's  and Africa's digital future.
         </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHJD-2E-qmxz7eI1lf5TULD4WCYYkD-IdZu5dHim_EIoL1TQ/viewform" target="_blank" rel="noopener noreferrer">
+        <a href="https://tinyurl.com/ethniledeck" target="_blank" rel="noopener noreferrer">
           <button className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors self-start">
             Explore
             <div>

@@ -52,14 +52,50 @@ const Sponsorship: React.FC = () => {
 
   return (
   <section id="sponsorship" className="box-border flex w-full flex-col items-start gap-8 border bg-[#FFF5CA] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
-  <article className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFD82A] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+    {/* Sponsors Section */}
+    <div className="box-border flex flex-col items-center gap-12 w-full border bg-white m-0 p-12 rounded-[20px] border-solid border-black max-md:p-8 max-sm:p-6">
+      {/* Main Sponsors */}
+      <div className="box-border flex flex-col items-center gap-8 w-full m-0 p-0">
+        <h3 className="box-border text-[#483B00] text-[28px] font-semibold leading-[32px] m-0 p-0 max-md:text-2xl max-sm:text-xl text-center">
+          Main Sponsors
+        </h3>
+        <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
+          {/* Base */}
+          <img src="/base.png" alt="Base" className="h-12" />
+          
+          {/* STARKNET */}
+          <img src="/startknet.png" alt="STARKNET" className="h-12" />
+          
+          {/* Ethereum Foundation */}
+          <img src="/ethereum.png" alt="Ethereum Foundation" className="h-12" />
+        </div>
+      </div>
+      
+      {/* Sponsors */}
+      <div className="box-border flex flex-col items-center gap-8 w-full m-0 p-0">
+        <h3 className="box-border text-[#483B00] text-[28px] font-semibold leading-[32px] m-0 p-0 max-md:text-2xl max-sm:text-xl text-center">
+          Sponsors
+        </h3>
+        <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
+          {/* Scroll */}
+          <img src="/scroll.png" alt="Scroll" className="h-12" />
+          
+          {/* CELO */}
+          <img src="/celo.png" alt="CELO" className="h-12" />
+          
+          {/* Tether */}
+          <img src="/tether.png" alt="Tether" className="h-12" />
+        </div>
+      </div>
+    </div>
+
+    {/* Sponsorship Opportunity */}
+    <article className="box-border flex flex-col items-start gap-12 w-full border bg-[#FFD82A] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6" style={{backgroundImage: 'url(/backkkimage.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
         <h2 className="box-border text-[40px] font-semibold leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
           Sponsorship Opportunity
         </h2>
         <p className="box-border text-[#141100] text-xl font-normal leading-[25px] m-0 p-0 max-sm:text-base">
-          Showcase your brand at Uganda's  first Ethereum community Event. Connect with innovators, investors, web3 communities, tech visionaries, and decision-makers,
-          gain media exposure, and position your brand as a leader in
-          Uganda's  and Africa's digital future.
+          Showcase your brand at Africa's premier blockchain & tech event. Connect with innovators, investors, and decision-makers, gain media exposure, and position your company as a leader in Africa's digital future.
         </p>
         <a href="https://tinyurl.com/ethniledeck" target="_blank" rel="noopener noreferrer">
           <button className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer bg-[#FFFDF4] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFF8E1] transition-colors self-start">

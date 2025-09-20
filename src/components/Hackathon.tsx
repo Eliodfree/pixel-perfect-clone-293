@@ -6,7 +6,7 @@ const Hackathon: React.FC = () => {
       <div className="box-border flex flex-col items-start gap-6 w-full m-0 p-0">
         <div className="box-border flex flex-col items-start gap-5 w-full m-0 p-0">
           <h2 className="box-border text-[40px] font-normal leading-[40px] tracking-[0.40px] bg-clip-text m-0 p-0 max-md:text-3xl max-sm:text-2xl">
-            Hackthon, Oct. 24th
+            Hackathon, Oct. 24th
           </h2>
           <div className="box-border flex items-center gap-3 flex-wrap m-0 p-0 max-md:flex-col max-md:items-start">
             <span className="box-border gap-2.5 text-black text-lg font-medium leading-[18px] bg-[#FEF3C0] m-0 px-5 py-1.5 rounded-[500px] border-[0.5px] border-solid border-[#7C6600] max-md:text-base max-sm:text-sm max-sm:px-[15px] max-sm:py-1">

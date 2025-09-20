@@ -73,18 +73,48 @@ const Sponsorship: React.FC = () => {
       
       {/* Additional Partners */}
       <div className="box-border flex flex-col items-center gap-8 w-full m-0 p-0">
-        <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
+        <div className="box-border flex items-center justify-center gap-8 w-full m-0 p-0 flex-wrap max-md:gap-6 max-sm:gap-4">
+          {/* Binance */}
+          <img src="/binancelogo.png" alt="Binance" className="h-8" />
+          
           {/* Scroll */}
           <img src="/scroll.png" alt="Scroll" className="h-8" />
           
-          {/* CELO DAO */}
-          <img src="/celodao.jpg" alt="CELO DAO" className="h-8" />
+          {/* CELO Africa DAO */}
+          <img src="/celeafricadao.png" alt="CELO Africa DAO" className="h-8" />
           
           {/* Tether */}
           <img src="/tether.png" alt="Tether" className="h-8" />
           
           {/* Ethereum Foundation */}
           <img src="/ethfaudation.webp" alt="Ethereum Foundation" className="h-8" />
+          
+          {/* DecentraCode */}
+          <img src="/decentracode.png" alt="DecentraCode" className="h-12 w-20" />
+          
+          {/* ENS DAO */}
+          <img src="/ensdao.jpg" alt="ENS DAO" className="h-8" />
+          
+          {/* ETH Safari */}
+          <img src="/ethsafari.jpg" alt="ETH Safari" className="h-10 w-20" />
+          
+          {/* MUDA */}
+          <img src="/muda.webp" alt="MUDA" className="h-10 w-20" />
+          
+          {/* Web3Bridge */}
+          <img src="/web3bridge.jpg" alt="Web3Bridge" className="h-10" />
+          
+          {/* Chainlink */}
+          <img src="/chainlink.png" alt="Chainlink" className="h-8" />
+          
+          {/* AdMur */}
+          <img src="/admur.png" alt="AdMur" className="h-8" />
+          
+          {/* OneRamp */}
+          <img src="/oneramp.webp" alt="OneRamp" className="h-8" />
+          
+          {/* Code3Space */}
+          <img src="/code3space.png" alt="Code3Space" className="h-16" />
         </div>
       </div>
     </div>

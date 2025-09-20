@@ -54,37 +54,37 @@ const Sponsorship: React.FC = () => {
   <section id="sponsorship" className="box-border flex w-full flex-col items-start gap-8 border bg-[#FFF5CA] m-0 p-[40px] rounded-[20px] border-solid border-black max-md:px-[20px] max-md:py-8 max-sm:px-4 max-sm:py-6">
     {/* Sponsors Section */}
     <div className="box-border flex flex-col items-center gap-12 w-full border bg-white m-0 p-12 rounded-[20px] border-solid border-black max-md:p-8 max-sm:p-6">
-      {/* Main Sponsors */}
+      {/* Partners */}
       <div className="box-border flex flex-col items-center gap-8 w-full m-0 p-0">
         <h3 className="box-border text-[#483B00] text-[28px] font-semibold leading-[32px] m-0 p-0 max-md:text-2xl max-sm:text-xl text-center">
-          Main Sponsors
+          Partners
         </h3>
         <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
           {/* Base */}
-          <img src="/base.png" alt="Base" className="h-12" />
+          <img src="/base.png" alt="Base" className="h-16" />
           
           {/* STARKNET */}
-          <img src="/startknet.png" alt="STARKNET" className="h-12" />
+          <img src="/startknet.png" alt="STARKNET" className="h-16" />
           
-          {/* Ethereum Foundation */}
-          <img src="/ethereum.png" alt="Ethereum Foundation" className="h-12" />
+          {/* ETHGlobal */}
+          <img src="/ethglobal.png" alt="ETHGlobal" className="h-16" />
         </div>
       </div>
       
-      {/* Sponsors */}
+      {/* Additional Partners */}
       <div className="box-border flex flex-col items-center gap-8 w-full m-0 p-0">
-        <h3 className="box-border text-[#483B00] text-[28px] font-semibold leading-[32px] m-0 p-0 max-md:text-2xl max-sm:text-xl text-center">
-          Sponsors
-        </h3>
         <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
           {/* Scroll */}
-          <img src="/scroll.png" alt="Scroll" className="h-12" />
+          <img src="/scroll.png" alt="Scroll" className="h-8" />
           
-          {/* CELO */}
-          <img src="/celo.png" alt="CELO" className="h-12" />
+          {/* CELO DAO */}
+          <img src="/celodao.jpg" alt="CELO DAO" className="h-8" />
           
           {/* Tether */}
-          <img src="/tether.png" alt="Tether" className="h-12" />
+          <img src="/tether.png" alt="Tether" className="h-8" />
+          
+          {/* Ethereum Foundation */}
+          <img src="/ethfaudation.webp" alt="Ethereum Foundation" className="h-8" />
         </div>
       </div>
     </div>

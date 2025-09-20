@@ -87,20 +87,20 @@ const Hero = () => {
               Speakers
             </a>
             <div className="max-sm:flex max-sm:flex-col max-sm:gap-2 max-sm:mt-2 max-sm:pt-2 max-sm:border-t max-sm:border-[rgba(255,255,255,0.2)]">
-              <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+              <a href="https://tinyurl.com/ethniledeck" target="_blank" rel="noopener noreferrer" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
                 Become a Sponsor
               </a>
-              <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScHJD-2E-qmxz7eI1lf5TULD4WCYYkD-IdZu5dHim_EIoL1TQ/viewform" target="_blank" rel="noopener noreferrer" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
               Apply to Speak
               </a>
             </div>
           </div>
           
           <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:hidden max-md:gap-2">
-            <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
+            <a href="https://tinyurl.com/ethniledeck" target="_blank" rel="noopener noreferrer" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
               Become a Sponsor
             </a>
-            <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#F9CC00] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScHJD-2E-qmxz7eI1lf5TULD4WCYYkD-IdZu5dHim_EIoL1TQ/viewform" target="_blank" rel="noopener noreferrer" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#F9CC00] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
              Apply to Speak
             </a>
             {/* <a href="#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer w-[130px] bg-[#F9CC00] m-0 px-4 py-2 rounded-[200px] max-md:text-xs max-md:w-auto max-md:px-3 max-md:py-1.5 hover:bg-[#E6B800] transition-colors">
@@ -152,7 +152,7 @@ const Hero = () => {
         </div>
 
         {/* Large Screen Layout - Images in Original Badge Positions */}
-        <div className={`relative w-[900px] max-w-full ml-[31px] mt-[100px] max-md:mt-[90px] max-sm:hidden max-sm:ml-0 max-sm:px-4 ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
+        {/* <div className={`relative w-[900px] max-w-full ml-[31px] mt-[100px] max-md:mt-[90px] max-sm:hidden max-sm:ml-0 max-sm:px-4 ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
           <div className="gap-8 flex max-md:flex-col max-md:items-stretch">
             <div className="w-[40%] max-md:w-full max-md:ml-0">
               <img
@@ -169,14 +169,14 @@ const Hero = () => {
               />
             </div>
             <div className="w-[40%] ml-4 max-md:w-full max-md:ml-0">
-              <img
+              {/* <img
                 src="/sideone.png"
                 className="w-full max-w-[500px] h-auto object-contain mt-2 max-md:mt-4"
                 alt="Hackathon"
-              />
-            </div>
-          </div>
-        </div>
+              /> */}
+            {/* </div>
+          </div> */}
+       
 
         {/* ETHNile Logo - Only on Large Screens - Reduced Size */}
         <div className={`relative z-10 mt-[1px] mb-[10px] max-md:hidden max-sm:hidden ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
@@ -251,9 +251,6 @@ const Hero = () => {
             </div>
             <div className="max-sm:flex max-sm:justify-center">
               <div className="max-sm:flex max-sm:gap-6">
-                <div className="rotate-[0.2617993898945194rad] bg-[rgba(255,234,139,1)] flex items-center gap-2 text-sm text-black font-extrabold uppercase tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,240,169,1)] border-solid border-[8px]">
-                  <span className="self-stretch my-auto">16-19 OCT.</span>
-                </div>
                 <div className="max-sm:mt-12">
                   <div className="rotate-[0.2617993898945194rad] bg-[rgba(255,224,88,1)] flex items-center gap-2 text-sm text-black font-extrabold whitespace-nowrap tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,240,174,1)] border-solid border-[8px]">
                     <span className="self-stretch my-auto">HYBRID</span>

@@ -120,9 +120,6 @@ const Hero: React.FC = () => {
           <div className="box-border absolute gap-2.5 text-sm font-extrabold leading-6 tracking-[2.8px] uppercase rotate-[-15deg] text-black bg-[#FFE058] m-0 px-[30px] py-[15px] rounded-[500px] border-[20px] border-solid border-[#FFF0AE] left-[66px] bottom-[200px]">
             HYBRID
           </div>
-          <div className="box-border absolute gap-2.5 text-sm font-extrabold leading-6 tracking-[2.8px] uppercase rotate-[15deg] text-black bg-[#FEEFAB] m-0 px-[30px] py-[15px] rounded-[500px] border-[20px] border-solid border-[#FFE987] left-[476px] bottom-20">
-            16TH - 19TH OCT.
-          </div>
           <div className="box-border absolute gap-2.5 text-sm font-extrabold leading-6 tracking-[2.8px] uppercase rotate-[-15deg] text-black bg-[#FFEA8B] m-0 px-[30px] py-[15px] rounded-[500px] border-[20px] border-solid border-[#FFF0A9] right-[50px] bottom-[170px]">
             KAMPALA, UGANDA
           </div>

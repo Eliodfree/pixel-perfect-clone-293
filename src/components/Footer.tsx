@@ -3,7 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer
-      className="box-border w-full min-h-[300px] relative mt-[100px] m-0 p-0 flex items-stretch justify-stretch max-sm:min-h-[220px] max-sm:px-0 max-sm:py-10"
+      className="box-border w-full relative mt-[100px] m-0 p-0 flex items-stretch justify-stretch"
       style={{
         backgroundImage: 'url(/backkkimage.png)',
         backgroundSize: 'cover',
@@ -11,12 +11,12 @@ const Footer: React.FC = () => {
         backgroundRepeat: 'no-repeat',
         backgroundColor: '#141100',
         width: '100%',
-        height: '100%',
+        minHeight: '300px',
       }}
     >
       {/* Dark overlay for stronger color */}
       <div className="absolute inset-0 z-[1] bg-[rgba(20,17,0,0.7)]" style={{ pointerEvents: 'none' }} />
-              <div className="box-border flex w-full max-w-[1165px] flex-col items-start gap-[30px] absolute -translate-x-2/4 z-[2] m-0 p-0 left-2/4 top-[50px] max-sm:gap-[20px] max-sm:px-5 max-sm:py-0">
+      <div className="box-border flex w-full max-w-[1165px] flex-col items-start gap-[30px] relative z-[2] m-0 p-[50px] mx-auto max-sm:gap-[20px] max-sm:px-5 max-sm:py-8">
         <div className="box-border flex w-full items-center gap-[329px] m-0 p-0 max-md:flex-col max-md:gap-10 max-sm:gap-[30px]">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/273d52adef34c77394969b64d0690a53a9b6a793?width=1120"
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           <div className="box-border flex items-center gap-[75px] m-0 p-0 max-md:gap-10 max-sm:gap-[30px]">
             <nav className="box-border flex flex-col items-start gap-6 opacity-70 m-0 p-0">
               <a href="#sponsor" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
-                Sponsor
+                Partners
               </a>
               <a href="#speakers" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 Speakers
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             </nav>
           </div>
         </div>
-        <div className="box-border flex justify-between items-center w-full m-0 px-8 py-3 border-t-[#FEF3C0] border-t border-solid max-md:flex-col max-md:gap-5">
+        <div className="box-border flex justify-between items-center w-full m-0 px-8 py-3 border-t-[#FEF3C0] border-t border-solid max-md:flex-col max-md:gap-5 max-sm:px-0 max-sm:pt-5">
           <div className="box-border flex items-center m-0 p-0">
             <span className="box-border text-[#FFF7D5] text-base font-medium leading-5 m-0 p-0 max-sm:text-sm">
               All rights reserved

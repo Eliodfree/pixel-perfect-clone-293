@@ -42,7 +42,7 @@ const Hackathon: React.FC = () => {
         </p>
       </div>
   <a 
-        href="https://www.notion.so/ETHNILE-2025-Hackathon-Tracks-Bounties-2655fe4bf98281f8b13cf9bf11a4ccf9#dcae420ca712486f8a7fffed10afaae4"
+        href="https://whimsical-source-7bb.notion.site/EthNile-Hacker-Manual-2655fe4bf982807cbf11cfa0bc02e8c5"
         target="_blank"
         rel="noopener noreferrer"
         className="box-border flex justify-start items-center gap-2.5 border text-[#141100] text-lg font-medium leading-[18px] cursor-pointer self-start bg-[#FFD51A] m-0 px-[100px] py-[30px] rounded-[500px] border-solid border-[#483B00] max-sm:text-sm max-sm:px-10 max-sm:py-[15px] hover:bg-[#FFD000] transition-colors"

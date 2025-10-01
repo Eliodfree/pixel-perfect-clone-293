@@ -52,13 +52,29 @@ const GenerateDPA = () => {
       canvas.width = 1093;
       canvas.height = 1092;
 
-      // Create gradient background
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, '#FFFBEA');
-      gradient.addColorStop(0.82, '#FFFBEA');
-      gradient.addColorStop(1, '#FFC700');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Load and draw background image first
+      const bgImg = new Image();
+      bgImg.onload = () => {
+        // Draw background image to cover entire canvas
+        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+        
+        // Continue with the rest of the drawing
+        continueDrawing();
+      };
+      bgImg.onerror = () => {
+        // If background image fails to load, continue without it
+        continueDrawing();
+      };
+      bgImg.src = '/heroback.png';
+
+      const continueDrawing = () => {
+        // Create gradient background overlay (semi-transparent)
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, 'rgba(255, 251, 234, 0.95)');
+        gradient.addColorStop(0.82, 'rgba(255, 251, 234, 0.95)');
+        gradient.addColorStop(1, 'rgba(255, 199, 0, 0.95)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Add subtle decorative circles
       ctx.fillStyle = 'rgba(255, 225, 100, 0.15)';
@@ -76,68 +92,37 @@ const GenerateDPA = () => {
       ctx.arc(200, 650, 150, 0, Math.PI * 2);
       ctx.fill();
 
-      // Draw logo/pyramid on left
-      const logoX = 120;
-      const logoY = 120;
-      const logoSize = 60;
-      
-      // Draw pyramid logo
-      ctx.fillStyle = '#2B2600';
-      ctx.beginPath();
-      ctx.moveTo(logoX + logoSize/2, logoY - 10);
-      ctx.lineTo(logoX, logoY + logoSize);
-      ctx.lineTo(logoX + logoSize, logoY + logoSize);
-      ctx.closePath();
-      ctx.fill();
-      
-      // Add golden highlight
-      ctx.fillStyle = '#FFD51A';
-      ctx.beginPath();
-      ctx.moveTo(logoX + logoSize/2, logoY - 10);
-      ctx.lineTo(logoX, logoY + logoSize);
-      ctx.lineTo(logoX + logoSize/2, logoY + logoSize/2);
-      ctx.closePath();
-      ctx.fill();
-
-      // Draw river/Nile lines
-      ctx.strokeStyle = '#FFD51A';
-      ctx.lineWidth = 2;
-      for (let i = 0; i < 3; i++) {
-        ctx.beginPath();
-        ctx.moveTo(logoX + 10, logoY + logoSize + 10 + i * 5);
-        ctx.lineTo(logoX + logoSize - 10, logoY + logoSize + 10 + i * 5);
-        ctx.stroke();
-      }
-
       // Add ETHNile logo text
       ctx.fillStyle = '#141100';
       ctx.font = 'bold 52px Arial, sans-serif';
       ctx.textAlign = 'left';
-      ctx.fillText('ETHNile', 210, 135);
+      ctx.fillText('ETHNile', 120, 135);
       
       // Add '25 badge
       ctx.fillStyle = '#FFD51A';
       ctx.beginPath();
-      ctx.arc(425, 100, 22, 0, Math.PI * 2);
+      ctx.arc(335, 100, 22, 0, Math.PI * 2);
       ctx.fill();
       ctx.fillStyle = '#141100';
       ctx.font = 'bold 18px Arial';
-      ctx.fillText("'25", 412, 107);
+      ctx.fillText("'25", 322, 107);
 
       // Add tagline
       ctx.font = '15px Arial';
       ctx.fillStyle = '#6B5D4F';
-      ctx.fillText('Decentralizing Possibilities -', 210, 155);
-      ctx.fillText('Unlocking Innovation at the Source', 210, 172);
+      ctx.fillText('Decentralizing Possibilities -', 120, 155);
+      ctx.fillText('Unlocking Innovation at the Source', 120, 172);
 
       // Add navigation buttons with yellow background
-      const navY = 120;
-      const navHeight = 40;
+      const navY = 115;
+      const navHeight = 50;
+      const navX = 580;
+      const navWidth = 440;
       
       // Yellow rounded rectangle background
       ctx.fillStyle = '#FFD51A';
       ctx.beginPath();
-      ctx.roundRect(600, navY - 25, 400, navHeight, 20);
+      ctx.roundRect(navX, navY - 25, navWidth, navHeight, 25);
       ctx.fill();
       
       // Black border
@@ -145,15 +130,22 @@ const GenerateDPA = () => {
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      // Button text
+      // Button text with better spacing
       ctx.fillStyle = '#141100';
-      ctx.font = 'bold 17px Arial';
+      ctx.font = 'bold 16px Arial';
       ctx.textAlign = 'center';
-      ctx.fillText('HACKTHON', 660, navY);
-      ctx.fillText('|', 740, navY);
-      ctx.fillText('CONFERENCE', 820, navY);
-      ctx.fillText('|', 920, navY);
-      ctx.fillText('CITY TOUR', 975, navY);
+      
+      // Calculate positions for even distribution
+      const btn1X = navX + navWidth * 0.2;
+      const btn2X = navX + navWidth * 0.5;
+      const btn3X = navX + navWidth * 0.8;
+      const textY = navY + 5;
+      
+      ctx.fillText('HACKATHON', btn1X, textY);
+      ctx.fillText('|', navX + navWidth * 0.35, textY);
+      ctx.fillText('CONFERENCE', btn2X, textY);
+      ctx.fillText('|', navX + navWidth * 0.65, textY);
+      ctx.fillText('CITY TOUR', btn3X, textY);
 
       // Add main text
       ctx.fillStyle = '#4A4A4A';
@@ -182,92 +174,40 @@ const GenerateDPA = () => {
       ctx.fillStyle = '#FFC700';
       ctx.fillRect(0, bottomY, canvas.width, canvas.height - bottomY);
 
-      // Add registration info
+      // Add registration info (moved left to avoid QR code)
+      const leftColumnX = 120;
       ctx.fillStyle = '#141100';
       ctx.font = 'bold 18px Arial';
       ctx.textAlign = 'left';
-      ctx.fillText('Register:', 288, 915);
-      ctx.font = '18px Arial';
-      ctx.fillText('https://tinyurl.com/EthnileReg', 382, 915);
+      ctx.fillText('Register:', leftColumnX, 935);
+      ctx.font = '17px Arial';
+      ctx.fillText('https://tinyurl.com/EthnileReg', leftColumnX, 960);
 
-      // Add date and location
-      ctx.font = 'bold 36px Arial';
-      ctx.fillText('16th - 25th', 288, 975);
-      ctx.font = '36px Arial';
-      ctx.fillText('Oct. 2025', 288, 1015);
-
-      ctx.font = 'bold 36px Arial';
-      ctx.fillText('Ndere Cultural Centre,', 460, 975);
-      ctx.font = '36px Arial';
-      ctx.fillText('Kampala, Uganda', 460, 1015);
-
-      // Draw 3D pyramid on right
-      const pyramidX = 950;
-      const pyramidY = 680;
-      const pyramidSize = 200;
-
-      // Back face
-      ctx.fillStyle = '#E8C100';
-      ctx.beginPath();
-      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
-      ctx.lineTo(pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
-      ctx.lineTo(pyramidX - pyramidSize * 0.1, pyramidY + pyramidSize * 0.4);
-      ctx.closePath();
-      ctx.fill();
-
-      // Right face with gradient
-      const rightGrad = ctx.createLinearGradient(pyramidX, pyramidY - pyramidSize * 0.8, pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
-      rightGrad.addColorStop(0, '#FFE44D');
-      rightGrad.addColorStop(1, '#DAA520');
-      ctx.fillStyle = rightGrad;
-      ctx.beginPath();
-      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
-      ctx.lineTo(pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
-      ctx.lineTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
-      ctx.closePath();
-      ctx.fill();
-
-      // Left face (brightest)
-      const leftGrad = ctx.createLinearGradient(pyramidX, pyramidY - pyramidSize * 0.8, pyramidX - pyramidSize * 0.5, pyramidY + pyramidSize * 0.4);
-      leftGrad.addColorStop(0, '#FFF4A3');
-      leftGrad.addColorStop(1, '#FFD700');
-      ctx.fillStyle = leftGrad;
-      ctx.beginPath();
-      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
-      ctx.lineTo(pyramidX - pyramidSize * 0.5, pyramidY + pyramidSize * 0.4);
-      ctx.lineTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
-      ctx.closePath();
-      ctx.fill();
-
-      // Add shine/highlight
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-      ctx.beginPath();
-      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
-      ctx.lineTo(pyramidX - pyramidSize * 0.3, pyramidY);
-      ctx.lineTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
-      ctx.closePath();
-      ctx.fill();
-
-      // Add red/orange decorative pattern on pyramid
-      ctx.fillStyle = 'rgba(218, 67, 40, 0.6)';
-      ctx.beginPath();
-      ctx.moveTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
-      ctx.lineTo(pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
-      ctx.lineTo(pyramidX + pyramidSize * 0.5, pyramidY + pyramidSize * 0.48);
-      ctx.closePath();
-      ctx.fill();
-
-      // Generate real QR code as data URL and draw it
-      const qrX = 738;
-      const qrY = 905;
-      const qrSize = 110;
+      // Add date and location with better spacing
+      const dateLocationY = 1005;
+      ctx.font = 'bold 32px Arial';
+      ctx.fillText('16th - 25th Oct. 2025', leftColumnX, dateLocationY);
       
+      ctx.font = 'bold 28px Arial';
+      ctx.fillText('Ndere Cultural Centre, Kampala, Uganda', leftColumnX, dateLocationY + 40);
+
+      // Generate real QR code as data URL and draw it (moved to right side)
+      const qrX = 880;
+      const qrY = 920;
+      const qrSize = 130;
+      
+      // White background for QR code with some padding
       ctx.fillStyle = '#FFFFFF';
-      ctx.fillRect(qrX, qrY, qrSize, qrSize);
+      ctx.fillRect(qrX - 5, qrY - 5, qrSize + 10, qrSize + 10);
+      
+      // Add border around QR code
+      ctx.strokeStyle = '#141100';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(qrX - 5, qrY - 5, qrSize + 10, qrSize + 10);
       
       QRCode.toDataURL('https://tinyurl.com/EthnileReg', {
         width: qrSize,
-        margin: 1,
+        margin: 0,
         color: { dark: '#141100', light: '#FFFFFF' }
       }, (err, qrUrl) => {
         if (err) {
@@ -280,10 +220,11 @@ const GenerateDPA = () => {
         qrImg.onload = () => {
           ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
           
+          // Label below QR code
           ctx.fillStyle = '#141100';
-          ctx.font = '11px Arial';
+          ctx.font = 'bold 14px Arial';
           ctx.textAlign = 'center';
-          ctx.fillText('Scan to Register', qrX + qrSize/2, qrY + qrSize + 16);
+          ctx.fillText('Scan to Register', qrX + qrSize/2, qrY + qrSize + 22);
 
           // Now draw the image if provided (async part)
           if (imgSrc) {
@@ -327,8 +268,8 @@ const GenerateDPA = () => {
             img.onerror = reject;
             img.src = imgSrc;
           } else {
-            // Draw placeholder circle with green background
-            ctx.fillStyle = '#006400';
+            // Draw placeholder circle with orange background
+            ctx.fillStyle = '#FF8C00';
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
             ctx.fill();
@@ -373,6 +314,7 @@ const GenerateDPA = () => {
         qrImg.onerror = reject;
         qrImg.src = qrUrl;
       });
+      }; // Close continueDrawing function
     });
   };
 
@@ -407,11 +349,11 @@ const GenerateDPA = () => {
 
   const generateImage = async () => {
     if (!uploadedImage) {
-      alert('Please upload your photo first!');
+      alert('📸 Upload Required!\n\nPlease upload your photo to create your personalized ETHNile Conference display picture.');
       return false;
     }
     if (!name) {
-      alert('Please enter your name!');
+      alert('✍️ Name Required!\n\nPlease enter your name to complete your ETHNile Conference display picture.');
       return false;
     }
 
@@ -605,14 +547,26 @@ const GenerateDPA = () => {
             {/* Left Column - Live Preview */}
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-[546px]">
+                <div 
+                  className="absolute inset-0 rounded-2xl"
+                  style={{
+                    backgroundImage: 'url(/heroback.png)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    zIndex: 0
+                  }}
+                />
                 <canvas 
                   ref={previewCanvasRef} 
-                  className="w-full h-auto rounded-2xl shadow-2xl border-4 border-[#FFD51A]"
+                  className="relative w-full h-auto rounded-2xl shadow-2xl border-4 border-[#FFD51A] bg-transparent"
+                  style={{ zIndex: 1 }}
                 />
                 {/* Circular clickable overlay for upload */}
                 <div 
-                  className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-6 w-44 h-44 md:w-52 md:h-52 rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/50"
+                  className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-44 h-44 md:w-52 md:h-52 rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/50"
                   onClick={handleCircleClick}
+                  style={{ zIndex: 2 }}
                 >
                   <div className="text-center">
                     <div className="text-white text-5xl mb-2">📸</div>
@@ -692,12 +646,9 @@ const GenerateDPA = () => {
               </div>
 
               {/* Action Buttons Card */}
-              <div className="bg-gradient-to-br from-[#FFFBEA] to-[#FFF4D4] rounded-2xl shadow-xl p-6 border-2 border-[#FFD51A]">
+              <div className="bg-gradient-to-br from-[#FFFBEA] to-[#FFF4D4] rounded-2xl shadow-xl p-6 border-2 border-[#FFD51A] mt-4">
                 <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#141100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  Generate & Download
+                    Generate & Download
                 </h3>
                 <div className="space-y-3">
                   <button
@@ -727,13 +678,12 @@ const GenerateDPA = () => {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  Quick Tips
+                  Quick steps
                 </h4>
                 <ul className="text-sm text-blue-800 space-y-1">
                   <li>• Use a square photo for best results</li>
                   <li>• Make sure your face is clearly visible</li>
                   <li>• High resolution images work better</li>
-                  <li>• Preview updates automatically as you type</li>
                 </ul>
               </div>
             </div>

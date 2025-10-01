@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 
 const Hero = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isGenerateDPAOpen, setIsGenerateDPAOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleGenerateDPA = () => {
+    setIsGenerateDPAOpen(!isGenerateDPAOpen);
+  };
+
+  const closeGenerateDPA = () => {
+    setIsGenerateDPAOpen(false);
   };
 
   return (
@@ -58,6 +67,43 @@ const Hero = () => {
               <a href="#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
                 Speakers
               </a>
+              <div 
+                className="relative flex-shrink-0"
+                onMouseEnter={() => setIsGenerateDPAOpen(true)}
+                onMouseLeave={() => setTimeout(closeGenerateDPA, 150)}
+              >
+                <button 
+                  onClick={toggleGenerateDPA}
+                  className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors flex items-center whitespace-nowrap"
+                >
+                  Generate DP
+                  <svg 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className={`ml-1 transition-transform duration-200 ${isGenerateDPAOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                {/* Invisible bridge to prevent dropdown from closing when moving mouse to dropdown */}
+                <div className={`absolute top-full left-0 w-full h-2 ${isGenerateDPAOpen ? 'block' : 'hidden'}`}></div>
+                <div 
+                  className={`absolute top-full left-0 mt-1 w-44 bg-[rgba(255,247,213,0.95)] backdrop-blur-[10px] border-2 border-solid border-[#FEEC96] rounded-[15px] p-3 shadow-lg z-[60] transition-all duration-200 ${
+                    isGenerateDPAOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2 pointer-events-none'
+                  }`}
+                >
+                  <a 
+                    href="/generate-dpa" 
+                    className="block px-3 py-2 text-sm text-[#141100] hover:bg-[rgba(255,255,255,0.1)] rounded-sm transition-colors font-medium"
+                    onClick={closeGenerateDPA}
+                  >
+                    Conference Day
+                  </a>
+                </div>
+              </div>
             </div>
             {/* Mobile Hamburger Menu */}
             <button 
@@ -86,6 +132,14 @@ const Hero = () => {
             <a href="#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Speakers
             </a>
+            <div className="border-t border-[rgba(255,255,255,0.2)] pt-2 mt-2">
+              <div className="text-xs font-medium text-[#141100] opacity-70 px-3 py-1 uppercase tracking-wide">
+                Generate DPA
+              </div>
+              <a href="/generate-dpa" className="block px-3 py-2 text-sm text-[#141100] hover:bg-[rgba(255,255,255,0.1)] rounded-sm transition-colors">
+                Conference Day
+              </a>
+            </div>
             <div className="max-sm:flex max-sm:flex-col max-sm:gap-2 max-sm:mt-2 max-sm:pt-2 max-sm:border-t max-sm:border-[rgba(255,255,255,0.2)]">
               <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
                 Become a Sponsor

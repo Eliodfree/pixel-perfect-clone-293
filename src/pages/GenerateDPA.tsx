@@ -1,0 +1,678 @@
+import React, { useState, useRef, useEffect } from 'react';
+import QRCode from 'qrcode';
+
+const GenerateDPA = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isGenerateDPAOpen, setIsGenerateDPAOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const previewCanvasRef = useRef<HTMLCanvasElement>(null);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleGenerateDPA = () => {
+    setIsGenerateDPAOpen(!isGenerateDPAOpen);
+  };
+
+  const closeGenerateDPA = () => {
+    setIsGenerateDPAOpen(false);
+  };
+
+  const generateShareLink = () => {
+    const currentUrl = window.location.href;
+    navigator.clipboard.writeText(currentUrl);
+    alert('Share link copied to clipboard!');
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setUploadedImage(event.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const drawDesign = async (canvas: HTMLCanvasElement, imgSrc: string | null = null, displayName = '') => {
+    return new Promise<void>((resolve, reject) => {
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        reject(new Error('Could not get canvas context'));
+        return;
+      }
+      
+      // Set canvas size to match the design (high resolution for download)
+      canvas.width = 1093;
+      canvas.height = 1092;
+
+      // Create gradient background
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, '#FFFBEA');
+      gradient.addColorStop(0.82, '#FFFBEA');
+      gradient.addColorStop(1, '#FFC700');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Add subtle decorative circles
+      ctx.fillStyle = 'rgba(255, 225, 100, 0.15)';
+      ctx.beginPath();
+      ctx.arc(350, 200, 180, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.fillStyle = 'rgba(255, 225, 100, 0.2)';
+      ctx.beginPath();
+      ctx.arc(800, 350, 220, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.fillStyle = 'rgba(255, 225, 100, 0.1)';
+      ctx.beginPath();
+      ctx.arc(200, 650, 150, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Draw logo/pyramid on left
+      const logoX = 120;
+      const logoY = 120;
+      const logoSize = 60;
+      
+      // Draw pyramid logo
+      ctx.fillStyle = '#2B2600';
+      ctx.beginPath();
+      ctx.moveTo(logoX + logoSize/2, logoY - 10);
+      ctx.lineTo(logoX, logoY + logoSize);
+      ctx.lineTo(logoX + logoSize, logoY + logoSize);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Add golden highlight
+      ctx.fillStyle = '#FFD51A';
+      ctx.beginPath();
+      ctx.moveTo(logoX + logoSize/2, logoY - 10);
+      ctx.lineTo(logoX, logoY + logoSize);
+      ctx.lineTo(logoX + logoSize/2, logoY + logoSize/2);
+      ctx.closePath();
+      ctx.fill();
+
+      // Draw river/Nile lines
+      ctx.strokeStyle = '#FFD51A';
+      ctx.lineWidth = 2;
+      for (let i = 0; i < 3; i++) {
+        ctx.beginPath();
+        ctx.moveTo(logoX + 10, logoY + logoSize + 10 + i * 5);
+        ctx.lineTo(logoX + logoSize - 10, logoY + logoSize + 10 + i * 5);
+        ctx.stroke();
+      }
+
+      // Add ETHNile logo text
+      ctx.fillStyle = '#141100';
+      ctx.font = 'bold 52px Arial, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('ETHNile', 210, 135);
+      
+      // Add '25 badge
+      ctx.fillStyle = '#FFD51A';
+      ctx.beginPath();
+      ctx.arc(425, 100, 22, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#141100';
+      ctx.font = 'bold 18px Arial';
+      ctx.fillText("'25", 412, 107);
+
+      // Add tagline
+      ctx.font = '15px Arial';
+      ctx.fillStyle = '#6B5D4F';
+      ctx.fillText('Decentralizing Possibilities -', 210, 155);
+      ctx.fillText('Unlocking Innovation at the Source', 210, 172);
+
+      // Add navigation buttons with yellow background
+      const navY = 120;
+      const navHeight = 40;
+      
+      // Yellow rounded rectangle background
+      ctx.fillStyle = '#FFD51A';
+      ctx.beginPath();
+      ctx.roundRect(600, navY - 25, 400, navHeight, 20);
+      ctx.fill();
+      
+      // Black border
+      ctx.strokeStyle = '#141100';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Button text
+      ctx.fillStyle = '#141100';
+      ctx.font = 'bold 17px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('HACKTHON', 660, navY);
+      ctx.fillText('|', 740, navY);
+      ctx.fillText('CONFERENCE', 820, navY);
+      ctx.fillText('|', 920, navY);
+      ctx.fillText('CITY TOUR', 975, navY);
+
+      // Add main text
+      ctx.fillStyle = '#4A4A4A';
+      ctx.font = '36px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('I have registered for', canvas.width / 2, 290);
+      
+      ctx.fillStyle = '#141100';
+      ctx.font = 'bold 56px Arial';
+      ctx.fillText('ETHNile Conference', canvas.width / 2, 355);
+
+      // Circular image with yellow border
+      const centerX = canvas.width / 2;
+      const centerY = 550;
+      const radius = 180;
+
+      // Draw yellow border/ring
+      ctx.strokeStyle = '#FFD51A';
+      ctx.lineWidth = 8;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius + 4, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Bottom yellow section (drawn early to layer correctly)
+      const bottomY = 892;
+      ctx.fillStyle = '#FFC700';
+      ctx.fillRect(0, bottomY, canvas.width, canvas.height - bottomY);
+
+      // Add registration info
+      ctx.fillStyle = '#141100';
+      ctx.font = 'bold 18px Arial';
+      ctx.textAlign = 'left';
+      ctx.fillText('Register:', 288, 915);
+      ctx.font = '18px Arial';
+      ctx.fillText('https://tinyurl.com/EthnileReg', 382, 915);
+
+      // Add date and location
+      ctx.font = 'bold 36px Arial';
+      ctx.fillText('16th - 25th', 288, 975);
+      ctx.font = '36px Arial';
+      ctx.fillText('Oct. 2025', 288, 1015);
+
+      ctx.font = 'bold 36px Arial';
+      ctx.fillText('Ndere Cultural Centre,', 460, 975);
+      ctx.font = '36px Arial';
+      ctx.fillText('Kampala, Uganda', 460, 1015);
+
+      // Draw 3D pyramid on right
+      const pyramidX = 950;
+      const pyramidY = 680;
+      const pyramidSize = 200;
+
+      // Back face
+      ctx.fillStyle = '#E8C100';
+      ctx.beginPath();
+      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
+      ctx.lineTo(pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
+      ctx.lineTo(pyramidX - pyramidSize * 0.1, pyramidY + pyramidSize * 0.4);
+      ctx.closePath();
+      ctx.fill();
+
+      // Right face with gradient
+      const rightGrad = ctx.createLinearGradient(pyramidX, pyramidY - pyramidSize * 0.8, pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
+      rightGrad.addColorStop(0, '#FFE44D');
+      rightGrad.addColorStop(1, '#DAA520');
+      ctx.fillStyle = rightGrad;
+      ctx.beginPath();
+      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
+      ctx.lineTo(pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
+      ctx.lineTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
+      ctx.closePath();
+      ctx.fill();
+
+      // Left face (brightest)
+      const leftGrad = ctx.createLinearGradient(pyramidX, pyramidY - pyramidSize * 0.8, pyramidX - pyramidSize * 0.5, pyramidY + pyramidSize * 0.4);
+      leftGrad.addColorStop(0, '#FFF4A3');
+      leftGrad.addColorStop(1, '#FFD700');
+      ctx.fillStyle = leftGrad;
+      ctx.beginPath();
+      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
+      ctx.lineTo(pyramidX - pyramidSize * 0.5, pyramidY + pyramidSize * 0.4);
+      ctx.lineTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
+      ctx.closePath();
+      ctx.fill();
+
+      // Add shine/highlight
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.beginPath();
+      ctx.moveTo(pyramidX, pyramidY - pyramidSize * 0.8);
+      ctx.lineTo(pyramidX - pyramidSize * 0.3, pyramidY);
+      ctx.lineTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
+      ctx.closePath();
+      ctx.fill();
+
+      // Add red/orange decorative pattern on pyramid
+      ctx.fillStyle = 'rgba(218, 67, 40, 0.6)';
+      ctx.beginPath();
+      ctx.moveTo(pyramidX + pyramidSize * 0.1, pyramidY + pyramidSize * 0.5);
+      ctx.lineTo(pyramidX + pyramidSize * 0.7, pyramidY + pyramidSize * 0.4);
+      ctx.lineTo(pyramidX + pyramidSize * 0.5, pyramidY + pyramidSize * 0.48);
+      ctx.closePath();
+      ctx.fill();
+
+      // Generate real QR code as data URL and draw it
+      const qrX = 738;
+      const qrY = 905;
+      const qrSize = 110;
+      
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(qrX, qrY, qrSize, qrSize);
+      
+      QRCode.toDataURL('https://tinyurl.com/EthnileReg', {
+        width: qrSize,
+        margin: 1,
+        color: { dark: '#141100', light: '#FFFFFF' }
+      }, (err, qrUrl) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+          return;
+        }
+        
+        const qrImg = new Image();
+        qrImg.onload = () => {
+          ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
+          
+          ctx.fillStyle = '#141100';
+          ctx.font = '11px Arial';
+          ctx.textAlign = 'center';
+          ctx.fillText('Scan to Register', qrX + qrSize/2, qrY + qrSize + 16);
+
+          // Now draw the image if provided (async part)
+          if (imgSrc) {
+            const img = new Image();
+            img.onload = () => {
+              ctx.save();
+              ctx.beginPath();
+              ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+              ctx.clip();
+
+              // Calculate scaling to cover the circle (cover fit)
+              const scale = Math.max(
+                (radius * 2) / img.width,
+                (radius * 2) / img.height
+              );
+              const scaledWidth = img.width * scale;
+              const scaledHeight = img.height * scale;
+              const offsetX = centerX - scaledWidth / 2;
+              const offsetY = centerY - scaledHeight / 2;
+
+              ctx.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
+              ctx.restore();
+
+              // Add orange name bar below the circle
+              const barWidth = 405;
+              const barHeight = 57;
+              const barX = centerX - barWidth / 2;
+              const barY = centerY + radius + 10;
+
+              ctx.fillStyle = '#FF8C00';
+              ctx.fillRect(barX, barY, barWidth, barHeight);
+
+              // Add name on orange strip
+              ctx.fillStyle = '#FFFFFF';
+              ctx.font = 'bold 32px Arial';
+              ctx.textAlign = 'center';
+              ctx.fillText(displayName || 'anthem', centerX, barY + 38);
+
+              resolve();
+            };
+            img.onerror = reject;
+            img.src = imgSrc;
+          } else {
+            // Draw placeholder circle with green background
+            ctx.fillStyle = '#006400';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw crosshair/guides
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([10, 5]);
+            
+            // Vertical line
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - radius + 20);
+            ctx.lineTo(centerX, centerY + radius - 20);
+            ctx.stroke();
+            
+            // Horizontal line
+            ctx.beginPath();
+            ctx.moveTo(centerX - radius + 20, centerY);
+            ctx.lineTo(centerX + radius - 20, centerY);
+            ctx.stroke();
+            
+            ctx.setLineDash([]);
+
+            // Add orange name bar below the circle
+            const barWidth = 405;
+            const barHeight = 57;
+            const barX = centerX - barWidth / 2;
+            const barY = centerY + radius + 10;
+
+            ctx.fillStyle = '#FF8C00';
+            ctx.fillRect(barX, barY, barWidth, barHeight);
+
+            // Add placeholder name or actual name
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 32px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(displayName || 'anthem', centerX, barY + 38);
+
+            resolve();
+          }
+        };
+        qrImg.onerror = reject;
+        qrImg.src = qrUrl;
+      });
+    });
+  };
+
+  // Live preview update (lower resolution for performance)
+  useEffect(() => {
+    const updatePreview = async () => {
+      if (previewCanvasRef.current) {
+        // Temporarily set lower resolution for preview
+        previewCanvasRef.current.width = 1093 / 2;
+        previewCanvasRef.current.height = 1092 / 2;
+        const ctx = previewCanvasRef.current.getContext('2d');
+        if (ctx) {
+          ctx.scale(0.5, 0.5);
+          await drawDesign(previewCanvasRef.current, uploadedImage, name);
+          ctx.scale(2, 2); // Reset scale
+        }
+      }
+    };
+    updatePreview();
+  }, [name, uploadedImage]);
+
+  const generateImage = async () => {
+    if (!uploadedImage) {
+      alert('Please upload your photo first!');
+      return false;
+    }
+    if (!name) {
+      alert('Please enter your name!');
+      return false;
+    }
+
+    // Generate on hidden canvas
+    if (canvasRef.current) {
+      await drawDesign(canvasRef.current, uploadedImage, name);
+      
+      // Update preview URL for display if needed (but since live preview, optional)
+      const generatedUrl = canvasRef.current.toDataURL('image/png');
+      setPreviewUrl(generatedUrl);
+    }
+    return true;
+  };
+
+  const downloadImage = async () => {
+    const success = await generateImage();
+    if (!success || !canvasRef.current) return;
+
+    const link = document.createElement('a');
+    link.download = `ethnile-conference-${name.replace(/\s+/g, '-')}.png`;
+    link.href = canvasRef.current.toDataURL('image/png');
+    link.click();
+  };
+
+  const handleCircleClick = () => {
+    document.getElementById('imageUpload')?.click();
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Generate Your ETHNile Conference DP',
+      text: 'Create your custom display picture for ETHNile Conference 2025!',
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy to clipboard
+        await navigator.clipboard.writeText(shareData.url);
+        alert('Link copied to clipboard! Share it with your friends.');
+      }
+    } catch (err) {
+      console.error('Share failed:', err);
+      alert('Unable to share. Please copy the URL manually.');
+    }
+  };
+
+
+  return (
+    <div className="min-h-screen bg-[rgba(255,251,234,1)]">
+      {/* Navigation Bar - Same as Hero component */}
+      <nav className="box-border absolute z-50 m-0 p-0 top-6 inset-x-[90px] max-md:inset-x-5 max-sm:inset-x-2.5 max-sm:top-3">
+        <div className="box-border flex w-full h-[65px] justify-between items-center backdrop-blur-[5px] bg-[rgba(255,247,213,0.50)] m-0 px-[25px] py-2 rounded-[500px] border-2 border-solid border-[#FEEC96] max-md:h-auto max-md:px-4 max-md:py-2 max-sm:flex-col max-sm:gap-2 max-sm:h-auto max-sm:px-3 max-sm:py-2 max-sm:rounded-[20px]">
+          <div className="box-border flex items-center gap-[30px] m-0 p-0 max-sm:gap-[15px] max-sm:w-full max-sm:justify-between">
+            <div className="max-sm:scale-75">
+              <svg width="29" height="51" viewBox="0 0 29 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="logo" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '28.067px', height: '49.352px'}}>
+                <path d="M13.8052 0.824089V21.6792L13.7945 21.6685L0.668457 28.6865L13.8052 0.824089Z" fill="#FFD30F" stroke="#231F20" strokeWidth="0.25" strokeMiterlimit="10"></path>
+                <path d="M27.6915 28.9128L13.8052 21.6792V0.824089L27.6915 28.9128Z" fill="#FFD30F" stroke="#231F20" strokeWidth="0.25" strokeMiterlimit="10"></path>
+                <path d="M0.520996 30.41L13.788 23.3173L27.8003 30.6235L13.788 38.6901L0.520996 30.41Z" fill="#1A1917"></path>
+              </svg>
+            </div>
+            <div className="box-border flex items-center gap-0.5 m-0 p-0 max-md:hidden">
+              <a href="/" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+                Home
+              </a>
+              <a href="/#about" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+                About Event
+              </a>
+              <a href="/#conference" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+                Schedule
+              </a>
+              <a href="/#hackathon" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+                Hackathon
+              </a>
+              <a href="/#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+                Speakers
+              </a>
+              <div 
+                className="relative flex-shrink-0"
+                onMouseEnter={() => setIsGenerateDPAOpen(true)}
+                onMouseLeave={() => setTimeout(closeGenerateDPA, 150)}
+              >
+                <button 
+                  onClick={toggleGenerateDPA}
+                  className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors flex items-center whitespace-nowrap"
+                >
+                  Generate DP
+                  <svg 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className={`ml-1 transition-transform duration-200 ${isGenerateDPAOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                <div className={`absolute top-full left-0 w-full h-2 ${isGenerateDPAOpen ? 'block' : 'hidden'}`}></div>
+                <div 
+                  className={`absolute top-full left-0 mt-1 w-44 bg-[rgba(255,247,213,0.95)] backdrop-blur-[10px] border-2 border-solid border-[#FEEC96] rounded-[15px] p-3 shadow-lg z-[60] transition-all duration-200 ${
+                    isGenerateDPAOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2 pointer-events-none'
+                  }`}
+                >
+                  <a 
+                    href="/generate-dpa" 
+                    className="block px-3 py-2 text-sm text-[#141100] hover:bg-[rgba(255,255,255,0.1)] rounded-sm transition-colors font-medium"
+                    onClick={closeGenerateDPA}
+                  >
+                    Conference Day
+                  </a>
+                </div>
+              </div>
+            </div>
+            <button 
+              className="hidden max-sm:block" 
+              onClick={toggleMobileMenu}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="#141100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 6H21" stroke="#141100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 18H21" stroke="#141100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div className={`${isMobileMenuOpen ? 'max-sm:flex' : 'max-sm:hidden'} hidden max-sm:absolute max-sm:top-full max-sm:right-0 max-sm:mt-2 max-sm:w-64 max-sm:bg-[rgba(255,247,213,0.95)] max-sm:backdrop-blur-[10px] max-sm:border-2 max-sm:border-solid max-sm:border-[#FEEC96] max-sm:rounded-[15px] max-sm:p-3 max-sm:flex-col max-sm:gap-2 max-sm:shadow-lg max-sm:z-50`}>
+            <a href="/" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+              Home
+            </a>
+            <a href="/#about" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+              About Event
+            </a>
+            <a href="/#conference" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+              Schedule
+            </a>
+            <a href="/#hackathon" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+              Hackathon
+            </a>
+            <a href="/#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+              Speakers
+            </a>
+            <div className="border-t border-[rgba(255,255,255,0.2)] pt-2 mt-2">
+              <div className="text-xs font-medium text-[#141100] opacity-70 px-3 py-1 uppercase tracking-wide">
+                Generate DPA
+              </div>
+              <a href="/generate-dpa" className="block px-3 py-2 text-sm text-[#141100] hover:bg-[rgba(255,255,255,0.1)] rounded-sm transition-colors">
+                Conference Day
+              </a>
+            </div>
+          </div>
+          
+          <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:hidden max-md:gap-2">
+            <button
+              onClick={generateShareLink}
+              className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors flex items-center"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-1">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Share Link
+            </button>
+            <a href="/" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
+              Back to Event
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 pt-32 pb-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Header with Share */}
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl font-bold text-gray-800">Generate Your ETHNile Conference DP</h1>
+            <button
+              onClick={handleShare}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg flex items-center gap-2"
+            >
+              Share Generator
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2v6h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 6L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 18v-6h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          {/* Live Preview */}
+          <div className="relative flex justify-center mb-8">
+            <div className="relative">
+              <canvas 
+                ref={previewCanvasRef} 
+                className="max-w-full h-auto rounded-2xl shadow-2xl border border-gray-200"
+                style={{ maxHeight: '700px' }}
+              />
+              {/* Circular clickable overlay for upload */}
+              <div 
+                className="absolute cursor-pointer top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -mt-12 w-80 h-80 rounded-full flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity bg-black/30"
+                onClick={handleCircleClick}
+              >
+                <div className="text-center">
+                  <div className="text-white text-6xl mb-2">+</div>
+                  <p className="text-white text-lg font-medium">{uploadedImage ? 'Change Photo' : 'Upload Photo'}</p>
+                </div>
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+                id="imageUpload"
+              />
+            </div>
+          </div>
+
+          {/* Name Input Section (Made larger) */}
+          <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
+            <div className="space-y-8">
+              <div>
+                <label className="block text-xl font-semibold text-gray-700 mb-4">
+                  Enter Your Name
+                </label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-8 py-6 border-2 border-gray-300 rounded-2xl focus:outline-none focus:ring-4 focus:ring-orange-400 focus:border-orange-400 text-2xl font-medium"
+                  placeholder="anthem"
+                />
+                <p className="text-base text-gray-500 mt-3">Your name will appear on the orange bar below your photo in the generated DP.</p>
+              </div>
+
+              <div className="flex justify-center gap-6 pt-6">
+                <button
+                  onClick={generateImage}
+                  className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-xl flex items-center gap-3"
+                >
+                  Generate Preview
+                  <span className="text-2xl">⚡</span>
+                </button>
+                <button
+                  onClick={downloadImage}
+                  className="bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg text-xl flex items-center gap-3"
+                >
+                  Download DP
+                  <span className="text-2xl">↓</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <canvas ref={canvasRef} style={{ display: 'none' }} />
+
+          <div className="text-center">
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-yellow-600 font-medium transition-colors text-lg"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Back to ETHNile Event
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GenerateDPA;

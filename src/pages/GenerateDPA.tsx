@@ -5,6 +5,7 @@ const GenerateDPA = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isGenerateDPAOpen, setIsGenerateDPAOpen] = useState(false);
   const [name, setName] = useState('');
+  const [debouncedName, setDebouncedName] = useState('');
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -319,7 +320,7 @@ const GenerateDPA = () => {
               ctx.fillStyle = '#FFFFFF';
               ctx.font = 'bold 32px Arial';
               ctx.textAlign = 'center';
-              ctx.fillText(displayName || 'anthem', centerX, barY + 38);
+              ctx.fillText(displayName || '', centerX, barY + 38);
 
               resolve();
             };
@@ -364,7 +365,7 @@ const GenerateDPA = () => {
             ctx.fillStyle = '#FFFFFF';
             ctx.font = 'bold 32px Arial';
             ctx.textAlign = 'center';
-            ctx.fillText(displayName || 'anthem', centerX, barY + 38);
+            ctx.fillText(displayName || '', centerX, barY + 38);
 
             resolve();
           }
@@ -375,23 +376,34 @@ const GenerateDPA = () => {
     });
   };
 
+  // Debounce name input to reduce canvas redraws
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedName(name);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [name]);
+
   // Live preview update (lower resolution for performance)
   useEffect(() => {
     const updatePreview = async () => {
       if (previewCanvasRef.current) {
-        // Temporarily set lower resolution for preview
-        previewCanvasRef.current.width = 1093 / 2;
-        previewCanvasRef.current.height = 1092 / 2;
+        // Set canvas size only if it hasn't been set yet
+        if (previewCanvasRef.current.width !== 1093 / 2 || previewCanvasRef.current.height !== 1092 / 2) {
+          previewCanvasRef.current.width = 1093 / 2;
+          previewCanvasRef.current.height = 1092 / 2;
+        }
         const ctx = previewCanvasRef.current.getContext('2d');
         if (ctx) {
+          ctx.save();
           ctx.scale(0.5, 0.5);
-          await drawDesign(previewCanvasRef.current, uploadedImage, name);
-          ctx.scale(2, 2); // Reset scale
+          await drawDesign(previewCanvasRef.current, uploadedImage, debouncedName);
+          ctx.restore();
         }
       }
     };
     updatePreview();
-  }, [name, uploadedImage]);
+  }, [debouncedName, uploadedImage]);
 
   const generateImage = async () => {
     if (!uploadedImage) {
@@ -639,16 +651,20 @@ const GenerateDPA = () => {
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-3 focus:ring-[#FFD51A] focus:border-[#FFD51A] text-xl font-medium placeholder-gray-400"
-                      placeholder="Enter your name"
+                      maxLength={20}
+                      className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-3 focus:ring-[#FFD51A] focus:border-[#FFD51A] text-lg font-medium placeholder-gray-400 placeholder:text-base"
+                      placeholder="Your name"
                     />
-                    <p className="text-sm text-gray-500 mt-2 flex items-start gap-2">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-0.5 flex-shrink-0">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                        <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      Your name will appear on the orange bar below your photo
-                    </p>
+                    <div className="flex justify-between items-center mt-2">
+                      <p className="text-sm text-gray-500 flex items-start gap-2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mt-0.5 flex-shrink-0">
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                          <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        Appears on the orange bar
+                      </p>
+                      <span className="text-xs text-gray-400 font-medium">{name.length}/20</span>
+                    </div>
                   </div>
 
                   <div>
@@ -686,7 +702,7 @@ const GenerateDPA = () => {
                 <div className="space-y-3">
                   <button
                     onClick={generateImage}
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
+                    className="w-full bg-orange-600 hover:bg-orange-700 text-black font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21 12a9 9 0 11-6.219-8.56" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -695,7 +711,7 @@ const GenerateDPA = () => {
                   </button>
                   <button
                     onClick={downloadImage}
-                    className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
+                    className="w-full bg-green-700 hover:bg-green-800 text-black font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

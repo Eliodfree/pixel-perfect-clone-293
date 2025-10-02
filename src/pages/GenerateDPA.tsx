@@ -50,7 +50,7 @@ const GenerateDPA = () => {
       
       // Set canvas size to match the design (high resolution for download)
       canvas.width = 1093;
-      canvas.height = 1092;
+      canvas.height = 1150;
 
       // Load and draw background image first
       const bgImg = new Image();
@@ -147,19 +147,19 @@ const GenerateDPA = () => {
       ctx.fillText('|', navX + navWidth * 0.65, textY);
       ctx.fillText('CITY TOUR', btn3X, textY);
 
-      // Add main text
+      // Add main text with better spacing and organization
       ctx.fillStyle = '#4A4A4A';
-      ctx.font = '36px Arial';
+      ctx.font = '32px Arial';
       ctx.textAlign = 'center';
-      ctx.fillText('I have registered for', canvas.width / 2, 290);
+      ctx.fillText('I have registered for', canvas.width / 2, 275);
       
       ctx.fillStyle = '#141100';
-      ctx.font = 'bold 56px Arial';
-      ctx.fillText('ETHNile Conference', canvas.width / 2, 355);
+      ctx.font = 'bold 64px Arial';
+      ctx.fillText('ETHNile', canvas.width / 2, 360);
 
-      // Circular image with yellow border
+      // Circular image with yellow border (moved down for more spacing)
       const centerX = canvas.width / 2;
-      const centerY = 550;
+      const centerY = 580;
       const radius = 180;
 
       // Draw yellow border/ring
@@ -169,31 +169,37 @@ const GenerateDPA = () => {
       ctx.arc(centerX, centerY, radius + 4, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Bottom yellow section (drawn early to layer correctly)
-      const bottomY = 892;
+      // Bottom yellow section (drawn early to layer correctly) - moved down for more spacing
+      const bottomY = 920;
       ctx.fillStyle = '#FFC700';
       ctx.fillRect(0, bottomY, canvas.width, canvas.height - bottomY);
 
-      // Add registration info (moved left to avoid QR code)
-      const leftColumnX = 120;
-      ctx.fillStyle = '#141100';
-      ctx.font = 'bold 18px Arial';
-      ctx.textAlign = 'left';
-      ctx.fillText('Register:', leftColumnX, 935);
-      ctx.font = '17px Arial';
-      ctx.fillText('https://tinyurl.com/EthnileReg', leftColumnX, 960);
-
-      // Add date and location with better spacing
-      const dateLocationY = 1005;
-      ctx.font = 'bold 32px Arial';
-      ctx.fillText('16th - 25th Oct. 2025', leftColumnX, dateLocationY);
+      // Left side content with bold professional styling
+      const leftContentX = 120;
       
-      ctx.font = 'bold 28px Arial';
-      ctx.fillText('Ndere Cultural Centre, Kampala, Uganda', leftColumnX, dateLocationY + 40);
+      // Registration section - Bold and prominent
+      ctx.fillStyle = '#141100';
+      ctx.font = '700 24px "Mona Sans", Arial, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('Register:', leftContentX, 975);
+      
+      ctx.font = '600 19px "Mona Sans", Arial, sans-serif';
+      ctx.fillStyle = '#2C2C2C';
+      ctx.fillText('https://tinyurl.com/EthnileReg', leftContentX, 1008);
+
+      // Date section - Large and bold
+      ctx.fillStyle = '#141100';
+      ctx.font = '700 36px "Mona Sans", Arial, sans-serif';
+      ctx.fillText('16th - 19th Oct. 2025', leftContentX, 1070);
+      
+      // Location section - Bold and clear
+      ctx.font = '600 28px "Mona Sans", Arial, sans-serif';
+      ctx.fillStyle = '#2C2C2C';
+      ctx.fillText('Ndere Cultural Centre, Kampala, Uganda', leftContentX, 1115);
 
       // Generate real QR code as data URL and draw it (moved to right side)
       const qrX = 880;
-      const qrY = 920;
+      const qrY = 948;
       const qrSize = 130;
       
       // White background for QR code with some padding
@@ -248,11 +254,11 @@ const GenerateDPA = () => {
               ctx.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
               ctx.restore();
 
-              // Add orange name bar below the circle
+              // Add orange name bar below the circle with more spacing
               const barWidth = 405;
               const barHeight = 57;
               const barX = centerX - barWidth / 2;
-              const barY = centerY + radius + 10;
+              const barY = centerY + radius + 25;
 
               ctx.fillStyle = '#FF8C00';
               ctx.fillRect(barX, barY, barWidth, barHeight);
@@ -293,11 +299,11 @@ const GenerateDPA = () => {
             
             ctx.setLineDash([]);
 
-            // Add orange name bar below the circle
+            // Add orange name bar below the circle with more spacing
             const barWidth = 405;
             const barHeight = 57;
             const barX = centerX - barWidth / 2;
-            const barY = centerY + radius + 10;
+            const barY = centerY + radius + 25;
 
             ctx.fillStyle = '#FF8C00';
             ctx.fillRect(barX, barY, barWidth, barHeight);

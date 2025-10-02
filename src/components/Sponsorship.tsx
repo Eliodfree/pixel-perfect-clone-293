@@ -96,11 +96,10 @@ const Sponsorship: React.FC = () => {
         <div className="box-border flex items-center justify-center gap-8 w-full m-0 p-0 flex-wrap max-md:gap-6 max-sm:gap-4">
 
            {/* OneRamp */}
-          <img src="/oneramp.webp" alt="OneRamp" className="h-10" />
+          <img src="/decentrix.png" alt="OneRamp" className="h-10" />
 
            {/* MUDA */}
-          <img src="/muda.webp" alt="MUDA" className="h-12 w-22" />
-
+         
            {/* AdMur */}
             <img src="/admur.png" alt="AdMur" className="h-10" />
 

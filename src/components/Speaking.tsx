@@ -29,7 +29,7 @@ const Speaking: React.FC = () => {
     { 
       name: 'Jordan Muthemba', 
       role: 'Co-Founder - Exion Finance', 
-      image: '/jordan.jpeg',
+      image: '/jordann.jpg',
       profileUrl: 'https://www.linkedin.com/in/jordan-muthemba'
     },
     { 
@@ -40,7 +40,7 @@ const Speaking: React.FC = () => {
     },
     { 
       name: 'Eddie Kago', 
-      role: 'Base EA Lead - Base', 
+      role: 'East Africa Lead - Base', 
       image: '/kargo.jpeg',
       profileUrl: 'https://www.linkedin.com/in/eddiekago'
     },

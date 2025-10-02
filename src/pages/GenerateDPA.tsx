@@ -151,7 +151,7 @@ const GenerateDPA = () => {
       ctx.fillStyle = '#4A4A4A';
       ctx.font = '32px Arial';
       ctx.textAlign = 'center';
-      ctx.fillText('I have registered for', canvas.width / 2, 275);
+      ctx.fillText('I will be attending', canvas.width / 2, 275);
       
       ctx.fillStyle = '#141100';
       ctx.font = 'bold 64px Arial';
@@ -190,7 +190,7 @@ const GenerateDPA = () => {
       // Date section - Large and bold
       ctx.fillStyle = '#141100';
       ctx.font = '700 36px "Mona Sans", Arial, sans-serif';
-      ctx.fillText('16th - 19th Oct. 2025', leftContentX, 1070);
+      ctx.fillText('21st - 25th Oct. 2025', leftContentX, 1070);
       
       // Location section - Bold and clear
       ctx.font = '600 28px "Mona Sans", Arial, sans-serif';
@@ -254,17 +254,17 @@ const GenerateDPA = () => {
               ctx.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
               ctx.restore();
 
-              // Add orange name bar below the circle with more spacing
+              // Add yellow name bar below the circle with more spacing
               const barWidth = 405;
               const barHeight = 57;
               const barX = centerX - barWidth / 2;
               const barY = centerY + radius + 25;
 
-              ctx.fillStyle = '#FF8C00';
+              ctx.fillStyle = '#FFC700';
               ctx.fillRect(barX, barY, barWidth, barHeight);
 
-              // Add name on orange strip
-              ctx.fillStyle = '#FFFFFF';
+              // Add name on yellow strip
+              ctx.fillStyle = '#141100';
               ctx.font = 'bold 32px Arial';
               ctx.textAlign = 'center';
               ctx.fillText(displayName || '', centerX, barY + 38);
@@ -274,8 +274,8 @@ const GenerateDPA = () => {
             img.onerror = reject;
             img.src = imgSrc;
           } else {
-            // Draw placeholder circle with orange background
-            ctx.fillStyle = '#FF8C00';
+            // Draw placeholder circle with yellow background
+            ctx.fillStyle = '#FFC700';
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
             ctx.fill();
@@ -299,17 +299,17 @@ const GenerateDPA = () => {
             
             ctx.setLineDash([]);
 
-            // Add orange name bar below the circle with more spacing
+            // Add yellow name bar below the circle with more spacing
             const barWidth = 405;
             const barHeight = 57;
             const barX = centerX - barWidth / 2;
             const barY = centerY + radius + 25;
 
-            ctx.fillStyle = '#FF8C00';
+            ctx.fillStyle = '#FFC700';
             ctx.fillRect(barX, barY, barWidth, barHeight);
 
             // Add placeholder name or actual name
-            ctx.fillStyle = '#FFFFFF';
+            ctx.fillStyle = '#141100';
             ctx.font = 'bold 32px Arial';
             ctx.textAlign = 'center';
             ctx.fillText(displayName || '', centerX, barY + 38);
@@ -621,7 +621,7 @@ const GenerateDPA = () => {
                           <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                           <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                        Appears on the orange bar
+                        Appears on the yellow bar
                       </p>
                       <span className="text-xs text-gray-400 font-medium">{name.length}/20</span>
                     </div>
@@ -654,21 +654,12 @@ const GenerateDPA = () => {
               {/* Action Buttons Card */}
               <div className="bg-gradient-to-br from-[#FFFBEA] to-[#FFF4D4] rounded-2xl shadow-xl p-6 border-2 border-[#FFD51A] mt-4">
                 <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    Generate & Download
+                    Download Your Display Picture
                 </h3>
                 <div className="space-y-3">
                   <button
-                    onClick={generateImage}
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-black font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 12a9 9 0 11-6.219-8.56" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <span>Generate Preview</span>
-                  </button>
-                  <button
                     onClick={downloadImage}
-                    className="w-full bg-green-700 hover:bg-green-800 text-black font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
+                    className="w-full bg-yellow-400 hover:bg-yellow-400 text-black font-bold py-5 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 text-lg"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

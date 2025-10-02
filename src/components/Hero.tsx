@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 
 const Hero = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isGenerateDPAOpen, setIsGenerateDPAOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleGenerateDPA = () => {
+    setIsGenerateDPAOpen(!isGenerateDPAOpen);
+  };
+
+  const closeGenerateDPA = () => {
+    setIsGenerateDPAOpen(false);
   };
 
   return (
@@ -12,7 +21,7 @@ const Hero = () => {
       <div className="flex flex-col relative min-h-screen w-full items-center pt-6 pb-[20px] px-20 max-md:max-w-full max-md:pb-[15px] max-md:px-5 max-sm:px-3 max-sm:pb-[10px] max-sm:min-h-screen">
         {/* Background Image for Big Screens */}
         <img
-          src="https://api.builder.io/api/v1/image/assets/e30a9ed2d282417f852404d6b0366525/ef6b920fe92d9deddf2c3c9af82c1d10ee8ef613?placeholderIfAbsent=true"
+          src="/heroback.png"
           className={`absolute h-full w-full object-cover inset-0 max-sm:hidden ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}
           alt="Background"
         />
@@ -58,6 +67,43 @@ const Hero = () => {
               <a href="#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
                 Speakers
               </a>
+              <div 
+                className="relative flex-shrink-0"
+                onMouseEnter={() => setIsGenerateDPAOpen(true)}
+                onMouseLeave={() => setTimeout(closeGenerateDPA, 150)}
+              >
+                <button 
+                  onClick={toggleGenerateDPA}
+                  className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors flex items-center whitespace-nowrap"
+                >
+                  Generate DP
+                  <svg 
+                    width="12" 
+                    height="12" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className={`ml-1 transition-transform duration-200 ${isGenerateDPAOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                {/* Invisible bridge to prevent dropdown from closing when moving mouse to dropdown */}
+                <div className={`absolute top-full left-0 w-full h-2 ${isGenerateDPAOpen ? 'block' : 'hidden'}`}></div>
+                <div 
+                  className={`absolute top-full left-0 mt-1 w-44 bg-[rgba(255,247,213,0.95)] backdrop-blur-[10px] border-2 border-solid border-[#FEEC96] rounded-[15px] p-3 shadow-lg z-[60] transition-all duration-200 ${
+                    isGenerateDPAOpen ? 'opacity-100 visible transform translate-y-0' : 'opacity-0 invisible transform -translate-y-2 pointer-events-none'
+                  }`}
+                >
+                  <a 
+                    href="/generate-dpa" 
+                    className="block px-3 py-2 text-sm text-[#141100] hover:bg-[rgba(255,255,255,0.1)] rounded-sm transition-colors font-medium"
+                    onClick={closeGenerateDPA}
+                  >
+                    Conference Day
+                  </a>
+                </div>
+              </div>
             </div>
             {/* Mobile Hamburger Menu */}
             <button 
@@ -86,6 +132,14 @@ const Hero = () => {
             <a href="#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
               Speakers
             </a>
+            <div className="border-t border-[rgba(255,255,255,0.2)] pt-2 mt-2">
+              <div className="text-xs font-medium text-[#141100] opacity-70 px-3 py-1 uppercase tracking-wide">
+                Generate DPA
+              </div>
+              <a href="/generate-dpa" className="block px-3 py-2 text-sm text-[#141100] hover:bg-[rgba(255,255,255,0.1)] rounded-sm transition-colors">
+                Conference Day
+              </a>
+            </div>
             <div className="max-sm:flex max-sm:flex-col max-sm:gap-2 max-sm:mt-2 max-sm:pt-2 max-sm:border-t max-sm:border-[rgba(255,255,255,0.2)]">
               <a href="#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
                 Become a Sponsor
@@ -113,7 +167,7 @@ const Hero = () => {
           {/* Image First on Small Screens */}
           <div className="mb-4">
             <img
-              src="https://api.builder.io/api/v1/image/assets/e30a9ed2d282417f852404d6b0366525/9d140c56cb33016a2fc17547b33b0480be56f453?placeholderIfAbsent=true"
+              src="/ethlogooo.png"
               className="aspect-[0.57] object-contain w-[70px] shrink-0 max-w-full"
               alt="EthNile Logo"
             />
@@ -148,29 +202,46 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Large Screen Layout - Images in Original Badge Positions */}
-        <div className={`relative w-[900px] max-w-full ml-[31px] mt-[100px] max-md:mt-[90px] max-sm:hidden max-sm:ml-0 max-sm:px-4 ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
-          <div className="gap-8 flex max-md:flex-col max-md:items-stretch">
-            <div className="w-[40%] max-md:w-full max-md:ml-0">
+        {/* Large Screen Layout - Event Info Badges */}
+        <div className={`relative w-full max-w-[900px] mt-[60px] max-md:mt-[50px] max-sm:hidden ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
+          <div className="flex justify-center items-center relative h-[240px]">
+            {/* Center Logo */}
+            <div className="flex justify-center z-10">
               <img
-                src="/sidetwo.png"
-                className="w-full max-w-[500px] h-auto object-contain mt-[8px] max-md:mt-4"
-                alt="Conference"
-              />
-            </div>
-            <div className="w-[20%] ml-4 max-md:w-full max-md:ml-0 flex justify-center">
-              <img
-                src="https://api.builder.io/api/v1/image/assets/e30a9ed2d282417f852404d6b0366525/9d140c56cb33016a2fc17547b33b0480be56f453?placeholderIfAbsent=true"
-                className="aspect-[0.57] object-contain w-[80px] shrink-0 max-w-full max-md:mt-4"
+                src="/ethlogooo.png"
+                className="w-24 h-auto object-contain"
                 alt="EthNile Logo"
               />
             </div>
-            <div className="w-[40%] ml-4 max-md:w-full max-md:ml-0">
-              <img
-                src="/sideone.png"
-                className="w-full max-w-[500px] h-auto object-contain mt-2 max-md:mt-4"
-                alt="Hackathon"
-              />
+            
+            {/* Top Left - 16TH - 19TH OCT */}
+            <div className="absolute top-4 left-12">
+              <img src="/october.png" alt="16-19 Oct" className="w-32 h-auto transform rotate-12" />
+            </div>
+            
+            {/* Top Center Left - HYBRID */}
+            <div className="absolute top-8 left-36">
+              <img src="/hybrid.png" alt="Hybrid" className="w-32 h-auto transform -rotate-6" />
+            </div>
+            
+            {/* Bottom Left - KAMPALA, UGANDA */}
+            <div className="absolute bottom-4 left-16">
+              <img src="/kampala.png" alt="Kampala" className="w-32 h-auto transform rotate-8" />
+            </div>
+            
+            {/* Top Right - HACKATHON */}
+            <div className="absolute top-4 right-12">
+              <img src="/hackthon.png" alt="Hackathon" className="w-32 h-auto transform -rotate-12" />
+            </div>
+            
+            {/* Top Center Right - CONFERENCE */}
+            <div className="absolute top-8 right-36">
+              <img src="/conference.png" alt="Conference" className="w-32 h-auto transform rotate-6" />
+            </div>
+            
+            {/* Bottom Right - CITY TOUR EVENT */}
+            <div className="absolute bottom-4 right-16">
+              <img src="/kampala.png" alt="City Tour Event" className="w-32 h-auto transform -rotate-8" />
             </div>
           </div>
         </div>
@@ -224,37 +295,27 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Small Screen Event Info Badges - Compact Layout */}
+        {/* Small Screen Event Info Badges - Using Local Images */}
         <div className={`hidden max-sm:block max-sm:mt-8 max-sm:mb-8 ${isMobileMenuOpen ? 'max-sm:blur-sm' : ''}`}>
           <div className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:gap-6">
             <div className="max-sm:flex max-sm:gap-6 max-sm:justify-center max-sm:items-start">
               <div>
-                <div className="rotate-[0.2617993898945194rad] bg-[rgba(199,164,5,1)] flex items-center gap-2 text-sm text-white font-extrabold whitespace-nowrap tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,242,184,1)] border-solid border-[8px]">
-                  <span className="self-stretch my-auto">CONFERENCE</span>
-                </div>
+                <img src="/conference.png" alt="Conference" className="w-24 h-auto" />
               </div>
               <div className="max-sm:flex max-sm:flex-col max-sm:gap-3">
                 <div>
-                  <div className="rotate-[-0.2617993898945194rad] bg-[rgba(184,152,9,1)] flex items-center gap-2 text-sm text-white font-extrabold whitespace-nowrap tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,242,184,1)] border-solid border-[8px]">
-                    <span className="self-stretch my-auto">HACKATHON</span>
-                  </div>
+                  <img src="/hackthon.png" alt="Hackathon" className="w-24 h-auto" />
                 </div>
                 <div>
-                  <div className="rotate-[-0.2617993898945194rad] bg-[rgba(255,234,139,1)] flex items-center gap-2 text-sm text-black font-extrabold uppercase tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,240,169,1)] border-solid border-[8px]">
-                    <span className="self-stretch my-auto">Kampala</span>
-                  </div>
+                  <img src="/kampala.png" alt="Kampala" className="w-24 h-auto" />
                 </div>
               </div>
             </div>
             <div className="max-sm:flex max-sm:justify-center">
               <div className="max-sm:flex max-sm:gap-6">
-                <div className="rotate-[0.2617993898945194rad] bg-[rgba(255,234,139,1)] flex items-center gap-2 text-sm text-black font-extrabold uppercase tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,240,169,1)] border-solid border-[8px]">
-                  <span className="self-stretch my-auto">16-19 OCT.</span>
-                </div>
+                <img src="/october.png" alt="16-19 Oct" className="w-24 h-auto" />
                 <div className="max-sm:mt-12">
-                  <div className="rotate-[0.2617993898945194rad] bg-[rgba(255,224,88,1)] flex items-center gap-2 text-sm text-black font-extrabold whitespace-nowrap tracking-[2.2px] leading-5 justify-center px-6 py-3 rounded-[500px] border-[rgba(255,240,174,1)] border-solid border-[8px]">
-                    <span className="self-stretch my-auto">HYBRID</span>
-                  </div>
+                  <img src="/hybrid.png" alt="Hybrid" className="w-24 h-auto" />
                 </div>
               </div>
             </div>

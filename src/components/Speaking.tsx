@@ -4,73 +4,73 @@ const Speaking: React.FC = () => {
   const speakers = [
     { 
       name: 'Awel Uwihanganye', 
-      role: 'Community Manager - Gitcoin', 
+      role: 'Partnerships Ld - CapitalSavvy', 
       image: '/Awel.jpeg',
       profileUrl: 'https://www.linkedin.com/in/awel-uwihanganye-58a96b149'
     },
     { 
       name: 'Daniel Kimotho', 
-      role: 'Ecosystem Growth - Celo Africa', 
+      role: 'Ecosystem & Strategic Partnerships - Celo', 
       image: '/daniel.jpeg',
       profileUrl: 'https://www.linkedin.com/in/daniel-kimotho'
     },
     { 
       name: 'Kashushu Karungi', 
-      role: 'Tech Lead - Ethereum Foundation', 
+      role: 'Director - Blocart Creatives', 
       image: '/kashushu.jpeg',
       profileUrl: 'https://www.linkedin.com/in/kashushu-karungi-160087213'
     },
     { 
       name: 'Solene Daviaud', 
-      role: 'Blockchain Developer - Polygon', 
+      role: 'Founder - Dev3pack', 
       image: '/solene.jpeg',
       profileUrl: 'https://www.linkedin.com/in/solene-daviaud'
     },
     { 
       name: 'Jordan Muthemba', 
-      role: 'DeFi Specialist - Aave', 
+      role: 'Co-Founder - Exion Finance', 
       image: '/jordan.jpeg',
       profileUrl: 'https://www.linkedin.com/in/jordan-muthemba'
     },
     { 
       name: 'Nasasira Daniel', 
-      role: 'Smart Contract Auditor - OpenZeppelin', 
+      role: 'DevRel - gatewayfm', 
       image: '/daniell.jpeg',
       profileUrl: 'https://x.com/nasasira_daniel'
     },
     { 
       name: 'Eddie Kago', 
-      role: 'Web3 Researcher - ConsenSys', 
+      role: 'Base EA Lead - Base', 
       image: '/kargo.jpeg',
       profileUrl: 'https://www.linkedin.com/in/eddiekago'
     },
     { 
       name: 'Jovan Mwesigwa', 
-      role: 'NFT Artist & Developer', 
+      role: 'Co-Founder - Oneramp', 
       image: '/jovan.jpeg',
       profileUrl: 'https://www.linkedin.com/in/jovan-mwesigwa'
     },
     { 
       name: 'Mulondo Daniel', 
-      role: 'Blockchain Educator - BitHub Africa', 
+      role: 'Secretary General - Blockchain Association of Uganda', 
       image: '/mulondo.jpeg',
       profileUrl: 'https://www.linkedin.com/in/mulondodaniel/'
     },
     { 
       name: 'Ivan Kibuuka', 
-      role: 'Protocol Engineer - Chainlink', 
+      role: 'Founder - Arudem', 
       image: '/ivan.jpeg',
       profileUrl: 'https://www.linkedin.com/in/ivan-kibuuka/'
     },
     { 
       name: 'Elias Hezron', 
-      role: 'DAO Governance Expert', 
+      role: 'Product Engineer - ViFi Labs', 
       image: '/elias.jpeg',
       profileUrl: 'https://www.linkedin.com/in/eliashezron'
     },
     { 
       name: 'Ashirafu Walumu', 
-      role: 'Security Researcher - Trail of Bits', 
+      role: 'Product Manager - Safeboda', 
       image: '/ashiraff.jpeg',
       profileUrl: 'https://www.linkedin.com/in/ashirafu-walumu-125a5a167/?originalSubdomain=ug'
     },
@@ -116,10 +116,10 @@ const Speaking: React.FC = () => {
                 </div>
               </div>
               <div className="box-border bg-[#FFEEA1] p-3 border-2 border-t-0 border-[#D4C89A] flex-grow">
-                <h3 className="box-border text-base font-semibold m-0 mb-1 truncate" style={{color: '#141100'}}>
+                <h3 className="box-border m-0 mb-1 truncate" style={{fontFamily: 'Mona Sans, sans-serif', fontWeight: 600, fontSize: '18px', color: '#101728'}}>
                   {speaker.name}
                 </h3>
-                <p className="box-border text-xs m-0 line-clamp-2" style={{color: '#141100'}}>
+                <p className="box-border m-0 line-clamp-2" style={{fontFamily: 'Mona Sans, sans-serif', fontWeight: 400, fontSize: '12px', color: '#141100'}}>
                   {speaker.role}
                 </p>
               </div>

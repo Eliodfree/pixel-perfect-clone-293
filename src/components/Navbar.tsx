@@ -1,11 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isGenerateDPAOpen, setIsGenerateDPAOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Handle smooth scroll to section
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
+    // Scroll to section with smooth animation
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 100; // Account for navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -59,18 +85,18 @@ const Navbar = () => {
             </svg>
           </Link>
           <div className="box-border flex items-center gap-0.5 m-0 p-0 max-md:hidden">
-            <Link to="/#about" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
               About Event
-            </Link>
-            <Link to="/#conference" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            </a>
+            <a href="#conference" onClick={(e) => handleNavClick(e, 'conference')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
               Schedule
-            </Link>
-            <Link to="/#hackathon" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            </a>
+            <a href="#hackathon" onClick={(e) => handleNavClick(e, 'hackathon')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
               Hackathon
-            </Link>
-            <Link to="/#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
+            </a>
+            <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-4 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors">
               Speakers
-            </Link>
+            </a>
             <div 
               className="relative flex-shrink-0" 
               ref={dropdownRef}
@@ -128,18 +154,18 @@ const Navbar = () => {
           ref={mobileMenuRef}
           className={`${isMobileMenuOpen ? 'max-sm:flex' : 'max-sm:hidden'} hidden max-sm:absolute max-sm:top-full max-sm:right-0 max-sm:mt-2 max-sm:w-64 max-sm:bg-[rgba(255,247,213,0.95)] max-sm:backdrop-blur-[10px] max-sm:border-2 max-sm:border-solid max-sm:border-[#FEEC96] max-sm:rounded-[15px] max-sm:p-3 max-sm:flex-col max-sm:gap-2 max-sm:shadow-lg max-sm:z-[60]`}
         >
-          <Link to="/#about" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
             About Event
-          </Link>
-          <Link to="/#conference" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+          </a>
+          <a href="#conference" onClick={(e) => handleNavClick(e, 'conference')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
             Schedule
-          </Link>
-          <Link to="/#hackathon" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+          </a>
+          <a href="#hackathon" onClick={(e) => handleNavClick(e, 'hackathon')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
             Hackathon
-          </Link>
-          <Link to="/#speaking" className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
+          </a>
+          <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="box-border gap-2 text-[#141100] text-sm font-semibold leading-5 cursor-pointer m-0 px-3 py-2 rounded-sm hover:bg-[rgba(255,255,255,0.1)] transition-colors text-left">
             Speakers
-          </Link>
+          </a>
           <div className="border-t border-[rgba(255,255,255,0.2)] pt-2 mt-2">
             <div className="text-xs font-medium text-[#141100] opacity-70 px-3 py-1 uppercase tracking-wide">
               Generate DPA
@@ -149,22 +175,22 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="max-sm:flex max-sm:flex-col max-sm:gap-2 max-sm:mt-2 max-sm:pt-2 max-sm:border-t max-sm:border-[rgba(255,255,255,0.2)]">
-            <Link to="/#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+            <a href="#sponsorship" onClick={(e) => handleNavClick(e, 'sponsorship')} className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
               Become a Sponsor
-            </Link>
-            <Link to="/#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
+            </a>
+            <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-3 py-2 rounded-[500px] hover:bg-[#FFE055] transition-colors">
               Apply to Speak
-            </Link>
+            </a>
           </div>
         </div>
         
         <div className="box-border flex items-center gap-4 m-0 p-0 max-sm:hidden max-md:gap-2">
-          <Link to="/#sponsorship" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
+          <a href="#sponsorship" onClick={(e) => handleNavClick(e, 'sponsorship')} className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
             Become a Sponsor
-          </Link>
-          <Link to="/#speaking" className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
+          </a>
+          <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="box-border gap-2 text-neutral-800 text-sm font-semibold leading-5 cursor-pointer bg-[#FFE677] m-0 px-4 py-2 rounded-[500px] max-md:text-xs max-md:px-3 max-md:py-1.5 hover:bg-[#FFE055] transition-colors">
             Apply to Speak
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

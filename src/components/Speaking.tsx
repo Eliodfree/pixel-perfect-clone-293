@@ -85,16 +85,16 @@ const Speaking: React.FC = () => {
         </h2>
         
         {/* Speaker Cards Grid - 12 speakers */}
-        <div className="box-border grid grid-cols-4 gap-4 w-full max-w-[900px] max-lg:grid-cols-2 max-sm:grid-cols-1">
+        <div className="box-border grid grid-cols-4 gap-4 w-full max-w-[900px] max-lg:grid-cols-2 max-sm:grid-cols-2 max-sm:gap-3">
           {speakers.map((speaker, index) => (
             <a
               key={`speaker-${index}`}
               href={speaker.profileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="box-border flex flex-col overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-white"
+              className="box-border flex flex-col overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-white max-sm:rounded-md"
             >
-              <div className="box-border bg-[#999999] h-[220px] w-full overflow-hidden relative flex-shrink-0">
+              <div className="box-border bg-[#999999] h-[220px] w-full overflow-hidden relative flex-shrink-0 max-sm:h-[180px]">
                 <img 
                   src={speaker.image} 
                   alt={speaker.name} 

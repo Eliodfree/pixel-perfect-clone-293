@@ -118,6 +118,9 @@ const Sponsorship: React.FC = () => {
                 {/* DecentraCode */}
           <img src="/decentracode.png" alt="DecentraCode" className="h-12 w-18" />
 
+                {/* EcoGrowth */}
+          <img src="/ecogrowth.jpg" alt="EcoGrowth" className="h-10" />
+
              {/* Code3Space */}
           {/* <img src="/code3space.png" alt="Code3Space" className="h-18" /> */}
 
@@ -164,7 +167,7 @@ const Sponsorship: React.FC = () => {
            <div className="box-border flex items-center justify-center gap-8 w-full m-0 p-0 flex-wrap max-md:gap-6 max-sm:gap-4">
 
           {/* OneRamp */}
-          <img src="/nextmedia.png" alt="nextmedia" className="h-10" />
+          <img src="/uotmag.png" alt="UOT Magazine" className="h-10" />
 
            {/* MUDA */}
           <img src="/vizi.png" alt="vizi" className="h-12 w-22" />

@@ -60,6 +60,10 @@ const Sponsorship: React.FC = () => {
           Trusted By 
         </h3>
         <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
+          {/* Stellar */}
+          <img src="/stellar.png" alt="Stellar" className="h-16" />
+        </div>
+        <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
           {/* Base */}
           <img src="/base.png" alt="Base" className="h-16" />
           

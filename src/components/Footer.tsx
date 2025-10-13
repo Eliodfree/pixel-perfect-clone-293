@@ -25,13 +25,13 @@ const Footer: React.FC = () => {
           />
           <div className="box-border flex items-center gap-[75px] m-0 p-0 max-md:gap-10 max-sm:gap-[30px]">
             <nav className="box-border flex flex-col items-start gap-6 opacity-70 m-0 p-0">
-              <a href="#sponsor" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
+              <a href="/#sponsorship" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 Partners
               </a>
-              <a href="#speakers" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
+              <a href="/#speaking" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 Speakers
               </a>
-              <a href="#schedule" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
+              <a href="https://www.notion.so/ETHNile-2025-Schedule-28779bcf727280c7b095f467d12c641b" target="_blank" rel="noopener noreferrer" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 Schedule
               </a>
             </nav>
@@ -39,10 +39,10 @@ const Footer: React.FC = () => {
               <a href="#subscribe" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 subscribe
               </a>
-              <a href="#about" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
+              <a href="/#about" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 About
               </a>
-              <a href="#home" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
+              <a href="/" className="box-border text-[#FFF7D5] text-xl font-medium leading-[25px] cursor-pointer m-0 p-0 max-sm:text-base hover:opacity-100 transition-opacity">
                 Home
               </a>
             </nav>

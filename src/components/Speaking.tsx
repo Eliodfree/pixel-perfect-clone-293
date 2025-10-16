@@ -74,6 +74,12 @@ const Speaking: React.FC = () => {
       image: '/ashiraff.jpeg',
       profileUrl: 'https://www.linkedin.com/in/ashirafu-walumu-125a5a167/?originalSubdomain=ug'
     },
+    { 
+      name: 'Alouzious Muhereza', 
+      role: 'Stellar Ambassador - Uganda', 
+      image: '/alozious.jpg',
+      profileUrl: '#'
+    },
   ];
 
   return (
@@ -98,8 +104,11 @@ const Speaking: React.FC = () => {
                 <img 
                   src={speaker.image} 
                   alt={speaker.name} 
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-300"
-                  style={{ objectFit: 'cover', objectPosition: 'center center' }}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+                  style={{ 
+                    objectFit: 'cover', 
+                    objectPosition: speaker.name === 'Alouzious Muhereza' ? 'center top' : 'center center' 
+                  }}
                   onError={(e) => {
                     e.currentTarget.src = '/daniel.jpeg';
                   }}

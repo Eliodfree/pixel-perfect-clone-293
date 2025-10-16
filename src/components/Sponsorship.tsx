@@ -182,6 +182,9 @@ const Sponsorship: React.FC = () => {
             {/* devpack */}
           <img src="/ticketdaddy.png" alt="ticketdaddy" className="h-10" />
 
+           {/* coingabar */}
+          <img src="/coingabar.png" alt="coingabar" className="h-10" />
+
         </div>
       </div>
     </div>

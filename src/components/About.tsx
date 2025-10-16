@@ -19,6 +19,17 @@ const About: React.FC = () => {
         </p>
       </div>
       <div className="box-border flex w-full items-stretch gap-6 mt-4 p-0 flex-row flex-nowrap justify-between max-lg:gap-3 max-md:flex-col max-md:gap-4">
+      <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
+          <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
+            <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
+              Hackathon Final Day Submission
+            </h3>
+            <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
+              Oct. 23rd, 2025
+            </time>
+          </div>
+        </article>
+        
         <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
           <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
             <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
@@ -27,20 +38,11 @@ const About: React.FC = () => {
               Exclusive
             </h3>
             <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Oct. 21, 2025
+              Oct. 24th, 2025
             </time>
           </div>
         </article>
-        <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
-          <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
-            <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
-              Hackathon Final Day Submission
-            </h3>
-            <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Oct. 24, 2025
-            </time>
-          </div>
-        </article>
+  
         <article className="box-border flex flex-col items-start gap-6 flex-1 border bg-[#FFF7D5] m-0 p-6 rounded-lg border-solid border-[rgba(72,59,0,0.50)] max-lg:p-5 max-md:p-5 max-sm:p-4">
           <div className="box-border flex flex-col items-start gap-4 m-0 p-0">
             <h3 className="box-border text-[#141100] text-[20px] font-bold leading-[24px] m-0 p-0 max-lg:text-lg max-md:text-lg max-sm:text-base">
@@ -49,7 +51,7 @@ const About: React.FC = () => {
               Conference
             </h3>
             <time className="box-border text-[#141100] text-sm font-medium leading-4 m-0 p-0 max-sm:text-xs">
-              Oct. 25, 2025
+              Oct. 25th, 2025
             </time>
           </div>
         </article>

@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             </span>
           </div>
           <div className="box-border flex items-center gap-[9px] m-0 p-0 max-sm:gap-1.5">
-            <a href="https://x.com/ethnile_ug" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/ETHNile_" target="_blank" rel="noopener noreferrer">
               <button className="box-border flex items-center gap-2.5 border bg-[#FFE677] m-0 p-2.5 rounded-[900px] border-solid border-[#FFEEA1] max-sm:p-2 hover:bg-[#FFE055] transition-colors">
                 <div>
                   <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg" className="footer-twitter" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '25px', height: '26px'}}>
@@ -63,19 +63,6 @@ const Footer: React.FC = () => {
                   </svg>
                 </div>
               </button>
-            </a>
-            <a href="mailto:info@ethnile.com" target="_blank" rel="noopener noreferrer">
-              <div>
-                <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="footer-email" style={{margin: 0, padding: 0, boxSizing: 'border-box', width: '45px', height: '46px', borderRadius: '22px', border: '1px solid #FFEEA1', background: '#FFE677'}}>
-                  <rect x="0.5" y="0.5" width="44" height="45" rx="22" fill="#FFE677"></rect>
-                  <rect x="0.5" y="0.5" width="44" height="45" rx="22" stroke="#FFEEA1"></rect>
-                  <path d="M15.3144 31.6303V22.5382L10 18.5044V29.7095C10 30.99 10.6481 31.6303 11.9443 31.6303" fill="#141100"></path>
-                  <path d="M15.0552 22.4741L21.6658 27.4043L28.2764 22.4741V16.1992L21.6658 21.1295L15.0552 16.1992" fill="#141100"></path>
-                  <path d="M28.0171 31.6303V22.5382L33.3315 18.5044V29.7095C33.3315 30.99 32.6834 31.6303 31.3872 31.6303" fill="#141100"></path>
-                  <path d="M10 18.6325L15.3144 22.6663V16.3915L13.3701 14.9188C11.6202 13.5742 10 14.9188 10 16.5836" fill="#141100"></path>
-                  <path d="M33.3315 18.6325L28.0171 22.6663V16.3915L29.9614 14.9188C31.7113 13.5742 33.3315 14.9188 33.3315 16.5836" fill="#141100"></path>
-                </svg>
-              </div>
             </a>
             <a href="https://t.me/+b4uEboGC5sg3NjNk" target="_blank" rel="noopener noreferrer">
               <button className="box-border flex items-center gap-2.5 border bg-[#FFE677] m-0 p-2.5 rounded-[900px] border-solid border-[#FFEEA1] max-sm:p-2 hover:bg-[#FFE055] transition-colors">

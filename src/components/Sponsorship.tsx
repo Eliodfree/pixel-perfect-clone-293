@@ -124,6 +124,12 @@ const Sponsorship: React.FC = () => {
 
                 {/* EcoGrowth */}
           <img src="/ecogrowth.jpg" alt="EcoGrowth" className="h-10" />
+          
+                {/* Flare */}
+          <img src="/flare.png" alt="Flare" className="h-10" />
+          
+                {/* HerDAO */}
+          <img src="/herdao.png" alt="HerDAO" className="h-10" />
 
              {/* Code3Space */}
           {/* <img src="/code3space.png" alt="Code3Space" className="h-18" /> */}

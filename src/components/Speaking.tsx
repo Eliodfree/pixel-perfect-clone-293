@@ -34,7 +34,7 @@ const Speaking: React.FC = () => {
     },
     { 
       name: 'Nasasira Daniel', 
-      role: 'DevRel - gatewayfm', 
+      role: 'Gateway.fm', 
       image: '/daniell.jpeg',
       profileUrl: 'https://x.com/nasasira_daniel'
     },
@@ -78,7 +78,7 @@ const Speaking: React.FC = () => {
       name: 'Alouzious Muhereza', 
       role: 'Stellar Ambassador - Uganda', 
       image: '/alozious.jpg',
-      profileUrl: '#'
+      profileUrl: 'https://www.linkedin.com/in/alouzious-muhereza-89116b328/'
     },
   ];
 

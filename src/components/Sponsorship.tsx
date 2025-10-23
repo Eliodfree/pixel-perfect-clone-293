@@ -67,7 +67,7 @@ const Sponsorship: React.FC = () => {
           <img src="/chainlink.png" alt="STARKNET" className="h-16" />
           
           {/* ETHGlobal */}
-          <img src="/scroll.png" alt="ETHGlobal" className="h-16" />
+          <img src="/ckash.jpg" alt="ETHGlobal" className="h-16" />
         </div>
         <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
           {/* Base */}
@@ -130,6 +130,9 @@ const Sponsorship: React.FC = () => {
           
                 {/* HerDAO */}
           <img src="/herdao.png" alt="HerDAO" className="h-10" />
+          
+                {/* Sonic */}
+          <img src="/sonic.jpg" alt="Sonic" className="h-10" />
 
              {/* Code3Space */}
           {/* <img src="/code3space.png" alt="Code3Space" className="h-18" /> */}

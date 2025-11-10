@@ -67,7 +67,7 @@ const Sponsorship: React.FC = () => {
           <img src="/chainlink.png" alt="STARKNET" className="h-16" />
           
           {/* ETHGlobal */}
-          <img src="/scroll.png" alt="ETHGlobal" className="h-16" />
+          <img src="/ckash.jpg" alt="ETHGlobal" className="h-16" />
         </div>
         <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
           {/* Base */}
@@ -78,6 +78,10 @@ const Sponsorship: React.FC = () => {
           
           {/* ETHGlobal */}
           <img src="/blockchainug.png" alt="ETHGlobal" className="h-16 bg-black" />
+        </div>
+        <div className="box-border flex items-center justify-center gap-12 w-full m-0 p-0 flex-wrap max-md:gap-8 max-sm:gap-6">
+          {/* Stellar */}
+          <img src="/stellar.png" alt="Stellar" className="h-16" />
         </div>
       </div>
       
@@ -96,11 +100,10 @@ const Sponsorship: React.FC = () => {
         <div className="box-border flex items-center justify-center gap-8 w-full m-0 p-0 flex-wrap max-md:gap-6 max-sm:gap-4">
 
            {/* OneRamp */}
-          <img src="/oneramp.webp" alt="OneRamp" className="h-10" />
+          <img src="/code3space.png" alt="OneRamp" className="h-16 w-16" />
 
            {/* MUDA */}
-          <img src="/muda.webp" alt="MUDA" className="h-12 w-22" />
-
+         
            {/* AdMur */}
             <img src="/admur.png" alt="AdMur" className="h-10" />
 
@@ -118,6 +121,18 @@ const Sponsorship: React.FC = () => {
 
                 {/* DecentraCode */}
           <img src="/decentracode.png" alt="DecentraCode" className="h-12 w-18" />
+
+                {/* EcoGrowth */}
+          <img src="/ecogrowth.jpg" alt="EcoGrowth" className="h-10" />
+          
+                {/* Flare */}
+          <img src="/flare.png" alt="Flare" className="h-10" />
+          
+                {/* HerDAO */}
+          <img src="/herdao.png" alt="HerDAO" className="h-10" />
+          
+                {/* Sonic */}
+          <img src="/sonic.jpg" alt="Sonic" className="h-10" />
 
              {/* Code3Space */}
           {/* <img src="/code3space.png" alt="Code3Space" className="h-18" /> */}
@@ -165,7 +180,7 @@ const Sponsorship: React.FC = () => {
            <div className="box-border flex items-center justify-center gap-8 w-full m-0 p-0 flex-wrap max-md:gap-6 max-sm:gap-4">
 
           {/* OneRamp */}
-          <img src="/nextmedia.png" alt="nextmedia" className="h-10" />
+          <img src="/uotmag.png" alt="UOT Magazine" className="h-10" />
 
            {/* MUDA */}
           <img src="/vizi.png" alt="vizi" className="h-12 w-22" />
@@ -175,6 +190,9 @@ const Sponsorship: React.FC = () => {
 
             {/* devpack */}
           <img src="/ticketdaddy.png" alt="ticketdaddy" className="h-10" />
+
+           {/* coingabar */}
+          <img src="/coingabar.png" alt="coingabar" className="h-10" />
 
         </div>
       </div>

@@ -214,10 +214,10 @@ const Hero = () => {
               />
             </div>
             
-            {/* Top Left - 16TH - 19TH OCT */}
-            <div className="absolute top-4 left-12">
-              <img src="/october.png" alt="16-19 Oct" className="w-32 h-auto transform rotate-12" />
-            </div>
+            {/* Top Left - 21ST - 25TH OCT */}
+            {/* <div className="absolute top-4 left-12">
+              <img src="/october.png" alt="21-25 Oct" className="w-32 h-auto transform rotate-12" />
+            </div> */}
             
             {/* Top Center Left - HYBRID */}
             <div className="absolute top-8 left-36">

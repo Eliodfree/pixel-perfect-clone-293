@@ -29,18 +29,18 @@ const Speaking: React.FC = () => {
     { 
       name: 'Jordan Muthemba', 
       role: 'Co-Founder - Exion Finance', 
-      image: '/jordan.jpeg',
+      image: '/jordann.jpg',
       profileUrl: 'https://www.linkedin.com/in/jordan-muthemba'
     },
     { 
       name: 'Nasasira Daniel', 
-      role: 'DevRel - gatewayfm', 
+      role: 'Gateway.fm', 
       image: '/daniell.jpeg',
       profileUrl: 'https://x.com/nasasira_daniel'
     },
     { 
       name: 'Eddie Kago', 
-      role: 'Base EA Lead - Base', 
+      role: 'East Africa Lead - Base', 
       image: '/kargo.jpeg',
       profileUrl: 'https://www.linkedin.com/in/eddiekago'
     },
@@ -74,6 +74,12 @@ const Speaking: React.FC = () => {
       image: '/ashiraff.jpeg',
       profileUrl: 'https://www.linkedin.com/in/ashirafu-walumu-125a5a167/?originalSubdomain=ug'
     },
+    { 
+      name: 'Alouzious Muhereza', 
+      role: 'Stellar Ambassador - Uganda', 
+      image: '/alozious.jpg',
+      profileUrl: 'https://www.linkedin.com/in/alouzious-muhereza-89116b328/'
+    },
   ];
 
   return (
@@ -85,21 +91,24 @@ const Speaking: React.FC = () => {
         </h2>
         
         {/* Speaker Cards Grid - 12 speakers */}
-        <div className="box-border grid grid-cols-4 gap-4 w-full max-w-[900px] max-lg:grid-cols-2 max-sm:grid-cols-1">
+        <div className="box-border grid grid-cols-4 gap-4 w-full max-w-[900px] max-lg:grid-cols-2 max-sm:grid-cols-2 max-sm:gap-3">
           {speakers.map((speaker, index) => (
             <a
               key={`speaker-${index}`}
               href={speaker.profileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="box-border flex flex-col overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-white"
+              className="box-border flex flex-col overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer bg-white max-sm:rounded-md"
             >
-              <div className="box-border bg-[#999999] h-[220px] w-full overflow-hidden relative flex-shrink-0">
+              <div className="box-border bg-[#999999] h-[220px] w-full overflow-hidden relative flex-shrink-0 max-sm:h-[180px]">
                 <img 
                   src={speaker.image} 
                   alt={speaker.name} 
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-300"
-                  style={{ objectFit: 'cover', objectPosition: 'center center' }}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+                  style={{ 
+                    objectFit: 'cover', 
+                    objectPosition: speaker.name === 'Alouzious Muhereza' ? 'center top' : 'center center' 
+                  }}
                   onError={(e) => {
                     e.currentTarget.src = '/daniel.jpeg';
                   }}
